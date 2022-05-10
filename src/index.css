@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    background-color: #ffd862;
+    padding: 0 15px;
+}
+
 @font-face {
     font-family: 'Bookman Old Style';
     src: url("./assets/fonts/bookmanoldstyle.ttf") format('truetype');

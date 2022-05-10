@@ -3,8 +3,8 @@ import styles from './App.module.scss';
 
 function App() {
     return (
-        <div className={styles.test}>
-            sometext
+        <div className={styles.wrapper}>
+
         </div>
     );
 }
