@@ -10,10 +10,12 @@ module.exports = {
         'freestyle': ['Freestyle Script', 'serif']
       },
       colors: {
-        'naples': '#ffd862',
+        'milk': '#fff4d4',
         'golden': '#ffe38e',
-        'cold': '9a9ad9',
-        'milk': 'fff4d4'
+        'naples': '#ffd862',
+        'putty': '#e9ce7d',
+        'cold': '#9a9ad9',
+        'cold-dark': '#7070D8'
       }
     },
   },
