@@ -1,0 +1,39 @@
+import React from 'react';
+import {ISubmenuProps, Submenu} from '../../submenu/Submenu';
+import imgEye from '../../../assets/images/icons/creature-icon-1.svg'
+import imgWolf from '../../../assets/images/icons/creature-icon-2.svg'
+
+import {useNavigate} from 'react-router-dom';
+
+interface IProps {
+
+}
+
+export const Sidebar: React.FC<IProps> = () => {
+
+    const navigate = useNavigate()
+
+    const navigateTo = (path: string) => () => navigate(path)
+
+    const menuItems: ISubmenuProps[] = [
+        {
+            name: 'Существа',
+            items: [
+                {
+                    icon: imgEye,
+                    name: 'Создать существо',
+                    onClick: navigateTo('create-creature')
+                },
+                {
+                    icon: imgWolf,
+                    name: 'Бестиарий',
+                    onClick: navigateTo('bestiary')
+                }
+            ]
+        }
+    ]
+
+    return <div className={'basis-[18.888%]'}>
+        {menuItems.map(menuElement => <Submenu {...menuElement}/>)}
+    </div>
+};

@@ -1,0 +1,28 @@
+.root {
+  @apply text-[22px]
+}
+/////////
+.head {
+  @apply bg-cold py-2.5 px-2 flex justify-between items-center shadow-xl cursor-pointer hover:bg-cold-dark;
+}
+
+.headName {
+  @apply ml-2 italic font-semibold
+
+}
+
+.headImage {
+  @apply w-[24px] h-[21px]
+}
+/////////
+.submenuItem {
+  @apply block bg-golden w-full flex py-2.5 px-2 hover:bg-putty
+}
+
+.submenuImage {
+  @apply pr-2 cursor-pointer
+}
+
+.submenuName {
+
+}
