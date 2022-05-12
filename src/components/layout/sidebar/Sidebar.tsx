@@ -33,7 +33,7 @@ export const Sidebar: React.FC<IProps> = () => {
         }
     ]
 
-    return <div className={'basis-[18.888%]'}>
-        {menuItems.map(menuElement => <Submenu {...menuElement}/>)}
+    return <div className={'basis-[315px]'}>
+        {menuItems.map(menuElement => <Submenu key={menuElement.name} {...menuElement}/>)}
     </div>
 };

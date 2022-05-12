@@ -17,6 +17,6 @@ export const Submenu: React.FC<ISubmenuProps> = ({name, items}) => {
             <img className={styles.headImage} src={imgTriangle} alt={'↓'}/>
         </div>
 
-        {items.map(item => <SubmenuItem name={item.name} img={item.icon} onClick={item.onClick}/>)}
+        {items.map(item => <SubmenuItem key={item.name} name={item.name} img={item.icon} onClick={item.onClick}/>)}
     </div>
 }
