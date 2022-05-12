@@ -1,5 +1,6 @@
 export interface ISubmenuItems {
     name: string,
     icon?: string,
-    onClick: Function
+    onClick: Function,
+    isActive: boolean
 }

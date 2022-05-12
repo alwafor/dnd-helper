@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './App.module.scss';
-import {Navbar} from "./components/navbar/Navbar";
+import {Navbar} from "./components/layout/navbar/Navbar";
 import {Sidebar} from "./components/layout/sidebar/Sidebar";
 import {routes} from './contants/routes';
 import {Route, Routes} from 'react-router-dom'

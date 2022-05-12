@@ -1,5 +1,5 @@
 import React from 'react';
-import {ISubmenuProps, Submenu} from '../../submenu/Submenu';
+import {ISubmenuProps, Submenu} from '../../reusable/submenu/Submenu';
 import imgEye from '../../../assets/images/icons/creature-icon-1.svg'
 import imgWolf from '../../../assets/images/icons/creature-icon-2.svg'
 
@@ -15,6 +15,8 @@ export const Sidebar: React.FC<IProps> = () => {
 
     const navigateTo = (path: string) => () => navigate(path)
 
+
+
     const menuItems: ISubmenuProps[] = [
         {
             name: 'Существа',
@@ -22,12 +24,14 @@ export const Sidebar: React.FC<IProps> = () => {
                 {
                     icon: imgEye,
                     name: 'Создать существо',
-                    onClick: navigateTo('create-creature')
+                    onClick: navigateTo('create-creature'),
+                    isActive: window.location.pathname === '/create-creature'
                 },
                 {
                     icon: imgWolf,
                     name: 'Бестиарий',
-                    onClick: navigateTo('bestiary')
+                    onClick: navigateTo('bestiary'),
+                    isActive: window.location.pathname === '/bestiary'
                 }
             ]
         }
