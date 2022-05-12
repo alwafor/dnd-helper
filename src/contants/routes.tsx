@@ -3,12 +3,12 @@ import {CreateCreaturePage} from "../pages/create-creature-page/CreateCreaturePa
 
 interface IRoute {
     path: string,
-    component: React.FC,
+    component: JSX.Element,
 }
 
 export const routes: IRoute[] = [
     {
-        path: '/main',
-        component: CreateCreaturePage
+        path: '/create-creature',
+        component: <CreateCreaturePage/>
     }
 ]
