@@ -1,5 +1,5 @@
 .root {
-  @apply text-[22px]
+  @apply text-[22px];
 }
 /////////
 .head {
@@ -7,20 +7,25 @@
 }
 
 .headName {
-  @apply ml-2 italic font-semibold
-
+  @apply ml-2 italic font-semibold;
 }
 
 .headImage {
-  @apply w-[24px] h-[21px]
+  @apply w-[24px] h-[21px];
 }
 /////////
 .submenuItem {
-  @apply block bg-golden w-full flex py-2.5 px-2 hover:bg-putty
+  @apply block bg-golden w-full flex py-2.5 px-2 hover:bg-putty;
+
+  &.active {
+    @apply bg-putty;
+  }
 }
 
+
+
 .submenuImage {
-  @apply pr-2 cursor-pointer
+  @apply pr-2 cursor-pointer;
 }
 
 .submenuName {
