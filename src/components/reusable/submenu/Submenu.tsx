@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './Submenu.module.scss'
 import {ISubmenuItems} from '../../../types/submenuTypes';
 import {SubmenuItem} from './SubmenuItem';
@@ -11,12 +11,19 @@ export interface ISubmenuProps {
 
 export const Submenu: React.FC<ISubmenuProps> = ({name, items}) => {
 
-    return <div className={styles.root}>
-        <div className={styles.head}>
-            <div className={styles.headName}>{name}</div>
-            <img className={styles.headImage} src={imgTriangle} alt={'↓'}/>
-        </div>
+    const [isOpened, setIsOpened] = useState(false)
 
-        {items.map(item => <SubmenuItem key={item.name} {...item}/>)}
+    const handleHeadClick = () => {
+        setIsOpened(prev => !prev)
+    }
+
+    return <div className={styles.root}>
+        <button className={styles.head} onClick={handleHeadClick}>
+            <div className={styles.headName}>{name}</div>
+            <img className={styles.headImage + (isOpened ? '' : ' ' + styles.reversed)} src={imgTriangle} alt={'↓'}/>
+        </button>
+        <div className={isOpened ? '' : 'hidden'}>
+            {items.map(item => <SubmenuItem key={item.name} {...item}/>)}
+        </div>
     </div>
 }

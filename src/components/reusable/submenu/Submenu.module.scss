@@ -3,7 +3,7 @@
 }
 /////////
 .head {
-  @apply bg-cold py-2.5 px-2 flex justify-between items-center shadow-xl cursor-pointer hover:bg-cold-dark;
+  @apply w-full bg-cold py-2.5 px-2 flex justify-between items-center shadow-xl cursor-pointer hover:bg-cold-dark;
 }
 
 .headName {
@@ -11,7 +11,11 @@
 }
 
 .headImage {
-  @apply w-[24px] h-[21px];
+  @apply w-[24px] h-[21px] transition-all duration-500;
+  &.reversed {
+    //transform: rotateX(180deg);
+    @apply rotate-180;
+  }
 }
 /////////
 .submenuItem {
@@ -29,5 +33,5 @@
 }
 
 .submenuName {
-
+  @apply text-left
 }
