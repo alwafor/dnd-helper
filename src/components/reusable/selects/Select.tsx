@@ -5,8 +5,8 @@ interface IProps extends  React.DetailedHTMLProps<React.SelectHTMLAttributes<HTM
 
 }
 
-export const Select: React.FC<IProps> = ({children,...rest}) => {
-    return <select className={styles.root} {...rest}>
+export const Select = React.forwardRef<HTMLSelectElement, IProps>(({children,...rest}, ref) => {
+    return <select ref={ref} className={styles.root} {...rest}>
         {children}
     </select>
-};
+});
