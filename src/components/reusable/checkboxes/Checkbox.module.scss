@@ -8,5 +8,9 @@
   .asideValue {
     @apply absolute right-[6px] top-[6px] ;
   }
+  .hiddenInput {
+    position: absolute;
+    clip: rect(0,0,0,0);
+  }
 }
 
