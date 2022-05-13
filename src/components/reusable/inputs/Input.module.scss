@@ -1,0 +1,13 @@
+.root {
+
+  @apply relative  rounded-full bg-milk text-black-075 pl-5 py-[6px];
+
+  .input {
+    @apply bg-transparent outline-none min-w-0;
+  }
+
+  .asideValue {
+    @apply absolute right-[6px] top-[6px] bg-milk z-10;
+  }
+}
+
