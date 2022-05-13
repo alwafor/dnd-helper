@@ -1,0 +1,12 @@
+.root {
+
+  @apply relative rounded-full bg-milk text-black-075 pl-5 py-[6px] hover:bg-milk-warm cursor-pointer select-none;
+
+  &.active {
+    @apply bg-cold hover:bg-cold-dark;
+  }
+  .asideValue {
+    @apply absolute right-[6px] top-[6px] ;
+  }
+}
+
