@@ -11,7 +11,7 @@ export interface ISubmenuProps {
 
 export const Submenu: React.FC<ISubmenuProps> = ({name, items}) => {
 
-    const [isOpened, setIsOpened] = useState(false)
+    const [isOpened, setIsOpened] = useState(true)
 
     const handleHeadClick = () => {
         setIsOpened(prev => !prev)
