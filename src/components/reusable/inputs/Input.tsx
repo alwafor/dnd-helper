@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Input.module.scss'
 
 interface IProps extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>{
-    asideValue?: string
+    asideValue?: string | number
 }
 
 export const Input: React.FC<IProps> = ( {asideValue, ...rest}) => {
