@@ -11,6 +11,7 @@ module.exports = {
       },
       colors: {
         'milk': '#fff4d4',
+        'milk-warm': '#ffe9a8',
         'golden': '#ffe38e',
         'naples': '#ffd862',
         'putty': '#e9ce7d',
