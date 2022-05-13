@@ -13,7 +13,6 @@
 .headImage {
   @apply w-[24px] h-[21px] transition-all duration-500;
   &.reversed {
-    //transform: rotateX(180deg);
     @apply rotate-180;
   }
 }
