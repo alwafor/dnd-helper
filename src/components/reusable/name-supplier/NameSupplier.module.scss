@@ -1,0 +1,9 @@
+.nameSupplier {
+  @apply relative w-full;
+  .name + * {
+    @apply mt-6;
+  }
+}
+.name {
+  @apply absolute pl-2.5 top-0 left-0;
+}
