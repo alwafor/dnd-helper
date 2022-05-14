@@ -1,0 +1,10 @@
+.imageLoader {
+  @apply flex flex-col items-center;
+}
+.imageWrapper {
+  @apply relative w-[250px] h-[250px] mb-2.5;
+
+  .image {
+    @apply absolute object-cover top-0 left-0 w-full h-full rounded-full border-black;
+  }
+}

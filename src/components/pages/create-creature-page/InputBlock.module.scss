@@ -1,0 +1,17 @@
+.inputBlock {
+  @apply flex flex-wrap gap-y-2.5 basis-1/3;
+}
+
+.inputBlock.block4 > * {
+  @apply basis-[45%];
+  &:nth-child(2n) {
+    @apply ml-[5%]
+  }
+}
+
+.inputBlock.block6 > * {
+  @apply basis-[30%];
+  &:not(:nth-child(3n+1)) {
+    @apply ml-[3%]
+  }
+}
