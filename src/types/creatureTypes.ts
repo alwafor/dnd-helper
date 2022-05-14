@@ -1,4 +1,4 @@
-import {TSize, TType, TWorldView} from '../contants/cretureContants';
+import {TSize, TType, TWorldView} from '../contants/creatureContants';
 
 export interface ICreatureData {
     imageUrl: string
@@ -8,12 +8,12 @@ export interface ICreatureData {
     size: TSize
     worldview: TWorldView
 
-    strength: number
-    agility: number
-    constitution: number
-    intelligence: number
-    wisdom: number
-    charisma: number
+    strength: string
+    agility: string
+    constitution: string
+    intelligence: string
+    wisdom: string
+    charisma: string
 
     strengthSaveThrow: boolean
     agilitySaveThrow: boolean
