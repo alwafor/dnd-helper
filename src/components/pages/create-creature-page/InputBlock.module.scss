@@ -1,8 +1,8 @@
 .inputBlock {
-  @apply basis-1/3;
+  @apply basis-[30%];
 
   .title {
-    @apply text-center text-[24px] mb-2;
+    @apply text-center text-[24px] mb-2 whitespace-nowrap;
   }
 
   .inputBlockInputs {
@@ -21,6 +21,10 @@
     &:not(:nth-child(3n+1)) {
       @apply ml-[5%]
     }
+  }
+
+  .inputBlockInputs.withoutNames > * {
+    @apply mt-7;
   }
 }
 
