@@ -12,34 +12,41 @@ interface IProps {
 }
 
 export const NameInputBlock: React.FC<IProps> = ({control}) => {
-    return  <div className={styles.inputBlock + ' ' + styles.block4}>
-        <NameSupplier name={'Имя'}>
-            <Controller name={'name'} control={control} render={({field}) => <Input {...field}/>}/>
-        </NameSupplier>
+    return  <div className={styles.inputBlock}>
+        <div className={styles.title}>
+            Базовая информация
+        </div>
+        <div className={styles.inputBlockInputs + ' ' + styles.block4}>
+            <NameSupplier name={'Имя'}>
+                <Controller name={'name'} control={control} render={({field}) => <Input {...field}/>}/>
+            </NameSupplier>
 
-        <NameSupplier name={'Тип'}>
-            <Controller name={'type'} control={control}
-                        render={({field}) => <Select {...field} defaultValue={'undefined'}>
-                            <option disabled value={'undefined'}>Выбор...</option>
-                            {types.map(type => <option key={type} value={type}>{type}</option>)}
-                        </Select>}/>
-        </NameSupplier>
+            <NameSupplier name={'Тип'}>
+                <Controller name={'type'} control={control}
+                            render={({field}) => <Select {...field} defaultValue={'undefined'}>
+                                <option disabled value={'undefined'}>Выбор...</option>
+                                {types.map(type => <option key={type} value={type}>{type}</option>)}
+                            </Select>}/>
+            </NameSupplier>
 
-        <NameSupplier name={'Размер'}>
-            <Controller name={'size'} control={control}
-                        render={({field}) => <Select {...field} defaultValue={'undefined'}>
-                            <option disabled value={'undefined'}>Выбор...</option>
-                            {sizes.map(size => <option key={size} value={size}>{size}</option>)}
-                        </Select>}/>
-        </NameSupplier>
+            <NameSupplier name={'Размер'}>
+                <Controller name={'size'} control={control}
+                            render={({field}) => <Select {...field} defaultValue={'undefined'}>
+                                <option disabled value={'undefined'}>Выбор...</option>
+                                {sizes.map(size => <option key={size} value={size}>{size}</option>)}
+                            </Select>}/>
+            </NameSupplier>
 
-        <NameSupplier name={'Мировоззрение'}>
-            <Controller name={'worldview'} control={control}
-                        render={({field}) => <Select {...field} defaultValue={'undefined'}>
-                            <option disabled value={'undefined'}>Выбор...</option>
-                            {worldViews.map(worldView => <option key={worldView}
-                                                                 value={worldView}>{worldView}</option>)}
-                        </Select>}/>
-        </NameSupplier>
+            <NameSupplier name={'Мировоззрение'}>
+                <Controller name={'worldview'} control={control}
+                            render={({field}) => <Select {...field} defaultValue={'undefined'}>
+                                <option disabled value={'undefined'}>Выбор...</option>
+                                {worldViews.map(worldView => <option key={worldView}
+                                                                     value={worldView}>{worldView}</option>)}
+                            </Select>}/>
+            </NameSupplier>
+        </div>
+
+
     </div>
 };

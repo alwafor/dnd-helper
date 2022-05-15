@@ -1,7 +1,10 @@
 .nameSupplier {
   @apply relative w-full;
   .name + * {
-    @apply mt-6;
+    @apply mt-7
+  }
+  .name {
+    @apply text-[18px];
   }
 }
 .name {

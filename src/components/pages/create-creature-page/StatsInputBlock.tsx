@@ -20,20 +20,23 @@ const validateStatFieldFunc = (e: ChangeEvent<HTMLInputElement>) => {
 }
 
 export const StatsInputBlock: React.FC<IProps> = ({control}) => {
-    return  <div className={styles.inputBlock + ' ' + styles.block6}>
-        {statsData.map(statData => <NameSupplier name={statData.displayName}>
-                <Controller name={statData.inputName}
-                            control={control}
-                            render={({field}) =>
-                                <Input {...field} min={1} max={30} type={'number'}
-                                       onChange={(e) => {
-                                           validateStatFieldFunc(e)
-                                           field.onChange(e)
-                                       }}
-                                       asideValue={statToModifier(field.value)}
-                                />}
-                />
-            </NameSupplier>
-        )}
+    return  <div className={styles.inputBlock}>
+        <div className={styles.title}>Статы</div>
+        <div className={styles.inputBlockInputs + ' ' + styles.block6}>
+            {statsData.map(statData => <NameSupplier name={statData.displayName}>
+                    <Controller name={statData.inputName}
+                                control={control}
+                                render={({field}) =>
+                                    <Input {...field} min={1} max={30} type={'number'}
+                                           onChange={(e) => {
+                                               validateStatFieldFunc(e)
+                                               field.onChange(e)
+                                           }}
+                                           asideValue={statToModifier(field.value)}
+                                    />}
+                    />
+                </NameSupplier>
+            )}
+        </div>
     </div>
 };
