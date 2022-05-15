@@ -11,6 +11,11 @@ interface IStatData {
     inputName: 'strength' | 'agility' | 'constitution' | 'intelligence' | 'wisdom' | 'charisma'
 }
 
+interface ISaveThrowStatData {
+    displayName: string
+    inputName: 'strengthSaveThrow' | 'agilitySaveThrow' | 'constitutionSaveThrow' | 'intelligenceSaveThrow' | 'wisdomSaveThrow' | 'charismaSaveThrow'
+}
+
 export const statsData: IStatData[] = [
     {
         displayName: 'Сил',
@@ -37,3 +42,5 @@ export const statsData: IStatData[] = [
         inputName: 'charisma'
     },
 ]
+
+export const saveThrowsStatsData = statsData.map(statData => ({...statData, inputName: statData.inputName + 'SaveThrow'})) as ISaveThrowStatData[]
