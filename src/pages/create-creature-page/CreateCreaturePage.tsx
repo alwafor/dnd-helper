@@ -5,6 +5,7 @@ import {ICreatureData} from '../../types/creatureTypes';
 import {StatsInputBlock} from '../../components/pages/create-creature-page/StatsInputBlock';
 import {NameInputBlock} from '../../components/pages/create-creature-page/NameInputBlock';
 import {HeadInputBlock} from '../../components/pages/create-creature-page/HeadInputBlock';
+import {SaveThrowsInputBlock} from '../../components/pages/create-creature-page/SaveThrowsInputBlock';
 
 
 export const CreateCreaturePage: React.FC = () => {
@@ -31,8 +32,9 @@ export const CreateCreaturePage: React.FC = () => {
     return <form className={styles.root} onSubmit={handleSubmit(onSubmit)}>
         <HeadInputBlock watchImageUrl={watchImageUrl} control={control}/>
         <div className={styles.inputBlocksWrapper}>
-           <NameInputBlock control={control}/>
-           <StatsInputBlock control={control} />
+            <NameInputBlock control={control}/>
+            <StatsInputBlock control={control}/>
+            <SaveThrowsInputBlock control={control}/>
         </div>
         <button>submit (test)</button>
     </form>
