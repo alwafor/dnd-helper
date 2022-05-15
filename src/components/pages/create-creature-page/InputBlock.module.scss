@@ -19,7 +19,7 @@
   .inputBlockInputs.block6 > * {
     @apply basis-[30%];
     &:not(:nth-child(3n+1)) {
-      @apply ml-[3%]
+      @apply ml-[5%]
     }
   }
 }
