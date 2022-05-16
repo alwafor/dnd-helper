@@ -11,5 +11,6 @@ export const Checkbox = React.forwardRef<HTMLInputElement, IProps>(({text, aside
     return <label className={styles.root + (rest.checked ? ' ' + styles.active : '')}>
         {text}
         <input ref={ref} type={'checkbox'} {...rest} aria-hidden className={styles.hiddenInput}/>
+        <div className={styles.asideValue}>{asideValue}</div>
     </label>
 });
