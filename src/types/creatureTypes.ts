@@ -25,7 +25,7 @@ export interface ICreatureData {
     hp: string
     armor: string
     difficulty: string
-    passivePerception: string
+    proficiencyBonus: string
 
     speed: string
     speedSwim: string

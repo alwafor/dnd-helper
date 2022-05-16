@@ -5,14 +5,13 @@ import {Control, Controller} from 'react-hook-form';
 import {Input} from '../../reusable/inputs/Input';
 import {ICreatureData} from '../../../types/creatureTypes';
 import {Validate} from '../../../utils/validateForms';
-import {difficultyToXp, percToPassivePerc} from '../../../utils/convertations';
+import {difficultyToXp} from '../../../utils/convertations';
 
 interface IProps {
     control: Control<ICreatureData, any>
-    wisdom: string
 }
 
-export const QuantitativeBlock: React.FC<IProps> = ({control, wisdom}) => {
+export const QuantitativeBlock: React.FC<IProps> = ({control}) => {
     return <div className={styles.inputBlock}>
         <div className={styles.title}>
             Кол. характ.
@@ -52,8 +51,15 @@ export const QuantitativeBlock: React.FC<IProps> = ({control, wisdom}) => {
                 />
             </NameSupplier>
 
-            <NameSupplier name={'Пас. воспр.'}>
-                <Input disabled value={percToPassivePerc(wisdom)}/>
+            <NameSupplier name={'Бонус мастер.'}>
+                <Controller name={'proficiencyBonus'}
+                            control={control}
+                            render={({field}) =>
+                                <Input {...field}
+                                       type={'number'}
+                                       onChange={(e) => field.onChange(Validate(e.target.value).integer().max(10).run())}
+                                />}
+                />
             </NameSupplier>
         </div>
     </div>
