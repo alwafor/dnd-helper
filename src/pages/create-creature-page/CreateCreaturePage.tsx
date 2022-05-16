@@ -32,7 +32,9 @@ export const CreateCreaturePage: React.FC = () => {
         }
     })
     const watchImageUrl = watch('imageUrl')
-    const watchWisdom = watch('wisdom')
+
+    const watchStats = watch(['strength', 'agility', 'constitution', 'intelligence', 'wisdom', 'charisma'])
+    const watchProficiencyBonus = watch('proficiencyBonus')
 
     useEffect(() => {
         console.log(watchImageUrl)
@@ -45,8 +47,8 @@ export const CreateCreaturePage: React.FC = () => {
         <div className={styles.inputBlocksWrapper}>
             <NameInputBlock control={control}/>
             <StatsInputBlock control={control}/>
-            <SaveThrowsInputBlock control={control}/>
-            <QuantitativeBlock control={control} wisdom={watchWisdom}/>
+            <SaveThrowsInputBlock control={control} stats={watchStats} proficiencyBonus={watchProficiencyBonus}/>
+            <QuantitativeBlock control={control}/>
             <SpeedBlock control={control}/>
         </div>
         <button>submit (test)</button>
