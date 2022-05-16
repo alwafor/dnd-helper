@@ -20,7 +20,15 @@ export const CreateCreaturePage: React.FC = () => {
             constitution: '10',
             intelligence: '10',
             wisdom: '10',
-            charisma: '10'
+            charisma: '10',
+            proficiencyBonus: '0',
+            armor: '10',
+            hp: '10',
+            difficulty: '0',
+            speed: '30',
+            speedClimb: '0',
+            speedFly: '0',
+            speedSwim: '0',
         }
     })
     const watchImageUrl = watch('imageUrl')
