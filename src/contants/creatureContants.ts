@@ -1,7 +1,7 @@
 import {Validate} from '../utils/validateForms';
 
-export const types = ['Нежить', 'Абберация', 'Гуманоид'] as const
-export const worldViews = ['Хаотично-злой', 'Нейтральный'] as const
+export const types = ['Растение', 'Абберация', 'Гуманоид', 'Великан', 'Фея', 'Слизь', 'Конструкт', 'Нежить', 'Дракон', 'Небожитель', 'Демон', 'Элементаль', 'Чудовище'] as const
+export const worldViews = ['Хаотично-добрый', 'Хаотично-нейтральный', 'Хаотично-злой', 'Нейтрально-добрый', 'Нейтральный', 'Нейтрально-злой', 'Законно-добрый', 'Законно-нейтральный', 'Законно-злой'] as const
 export const sizes = ['Мелкий', 'Маленький', 'Средний', 'Большой', 'Огромный', 'Гигантский'] as const
 
 export type TSize = typeof sizes[number]
@@ -19,7 +19,7 @@ interface ISaveThrowStatData {
 }
 
 interface ISpeedData {
-    speedNames: {displayName: string, inputName: 'speed' | 'speedClimb' | 'speedSwim' | 'speedFly'}[]
+    speedNames: { displayName: string, inputName: 'speed' | 'speedClimb' | 'speedSwim' | 'speedFly' }[]
     validateFunction: Function
     asideValue: string
 }
@@ -48,10 +48,13 @@ export const statsData: IStatData[] = [
     {
         displayName: 'Хар',
         inputName: 'charisma'
-    },
+    }
 ]
 
-export const saveThrowsStatsData = statsData.map(statData => ({...statData, inputName: statData.inputName + 'SaveThrow'})) as ISaveThrowStatData[]
+export const saveThrowsStatsData = statsData.map(statData => ({
+    ...statData,
+    inputName: statData.inputName + 'SaveThrow'
+})) as ISaveThrowStatData[]
 
 export const speedData: ISpeedData = {
     speedNames: [
