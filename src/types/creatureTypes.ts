@@ -21,4 +21,44 @@ export interface ICreatureData {
     intelligenceSaveThrow: boolean
     wisdomSaveThrow: boolean
     charismaSaveThrow: boolean
+
+    hp: string
+    armor: string
+    difficulty: string
+    passivePerception: string
+
+    speed: string
+    speedSwim: string
+    speedFly: string
+    speedClimb: string
+
+    vision: string
+    visionDark: string
+    visionBlind: string
+    visionTrue: string
+
+    //Skills
+    athletics: boolean
+
+    acrobatics: boolean
+    sleightOfHand: boolean
+    Stealth: boolean
+
+    arcana: boolean
+    history: boolean
+    investigation: boolean
+    nature: boolean
+    religion: boolean
+
+    animalHandling: boolean
+    insight: boolean
+    medicine: boolean
+    perception: boolean
+    survival: boolean
+
+    Deception: boolean
+    Intimidation: boolean
+    Performance: boolean
+    Persuasion: boolean
+
 }
