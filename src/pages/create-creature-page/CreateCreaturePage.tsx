@@ -6,6 +6,7 @@ import {StatsInputBlock} from '../../components/pages/create-creature-page/Stats
 import {NameInputBlock} from '../../components/pages/create-creature-page/NameInputBlock';
 import {HeadInputBlock} from '../../components/pages/create-creature-page/HeadInputBlock';
 import {SaveThrowsInputBlock} from '../../components/pages/create-creature-page/SaveThrowsInputBlock';
+import {QuantitativeBlock} from '../../components/pages/create-creature-page/QuantitativeBlock';
 
 
 export const CreateCreaturePage: React.FC = () => {
@@ -22,6 +23,7 @@ export const CreateCreaturePage: React.FC = () => {
         }
     })
     const watchImageUrl = watch('imageUrl')
+    const watchWisdom = watch('wisdom')
 
     useEffect(() => {
         console.log(watchImageUrl)
@@ -35,6 +37,7 @@ export const CreateCreaturePage: React.FC = () => {
             <NameInputBlock control={control}/>
             <StatsInputBlock control={control}/>
             <SaveThrowsInputBlock control={control}/>
+            <QuantitativeBlock control={control} wisdom={watchWisdom}/>
         </div>
         <button>submit (test)</button>
     </form>
