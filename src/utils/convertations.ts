@@ -1,3 +1,5 @@
+import {statToModifier} from './creatureCalculation';
+
 export function difficultyToXp(difficulty: number) {
     switch(difficulty) {
         case 0: default: return 10
@@ -32,4 +34,8 @@ export function difficultyToXp(difficulty: number) {
         case 29: return 135000
         case 30: return 155000
     }
+}
+
+export function percToPassivePerc(wisdom: string) {
+    return 10 + statToModifier(wisdom)
 }
