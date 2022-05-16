@@ -1,3 +1,5 @@
+import {Validate} from '../utils/validateForms';
+
 export const types = ['Нежить', 'Абберация', 'Гуманоид'] as const
 export const worldViews = ['Хаотично-злой', 'Нейтральный'] as const
 export const sizes = ['Мелкий', 'Маленький', 'Средний', 'Большой', 'Огромный', 'Гигантский'] as const
@@ -14,6 +16,12 @@ interface IStatData {
 interface ISaveThrowStatData {
     displayName: string
     inputName: 'strengthSaveThrow' | 'agilitySaveThrow' | 'constitutionSaveThrow' | 'intelligenceSaveThrow' | 'wisdomSaveThrow' | 'charismaSaveThrow'
+}
+
+interface ISpeedData {
+    speedNames: {displayName: string, inputName: 'speed' | 'speedClimb' | 'speedSwim' | 'speedFly'}[]
+    validateFunction: Function
+    asideValue: string
 }
 
 export const statsData: IStatData[] = [
@@ -44,3 +52,14 @@ export const statsData: IStatData[] = [
 ]
 
 export const saveThrowsStatsData = statsData.map(statData => ({...statData, inputName: statData.inputName + 'SaveThrow'})) as ISaveThrowStatData[]
+
+export const speedData: ISpeedData = {
+    speedNames: [
+        {displayName: 'Обычная', inputName: 'speed'},
+        {displayName: 'Лазание', inputName: 'speedClimb'},
+        {displayName: 'Плавание', inputName: 'speedSwim'},
+        {displayName: 'Полёт', inputName: 'speedFly'}
+    ],
+    validateFunction: (value: string) => Validate(value).integer().max(999999).run(),
+    asideValue: '(фут)'
+}
