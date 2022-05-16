@@ -32,7 +32,7 @@ export const StatsInputBlock: React.FC<IProps> = ({control}) => {
                                                validateStatFieldFunc(e)
                                                field.onChange(e)
                                            }}
-                                           asideValue={statToModifier(field.value)}
+                                           asideValue={`(${statToModifier(field.value)})`}
                                     />}
                     />
                 </NameSupplier>
