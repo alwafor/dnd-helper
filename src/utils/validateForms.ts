@@ -16,5 +16,3 @@ export function Validate(formValue: string) {
         }
     }
 }
-
-export const maxInt = (formValue: string) => Validate(formValue).integer().max(999999).run()
