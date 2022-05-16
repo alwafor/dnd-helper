@@ -7,6 +7,7 @@ import {NameInputBlock} from '../../components/pages/create-creature-page/NameIn
 import {HeadInputBlock} from '../../components/pages/create-creature-page/HeadInputBlock';
 import {SaveThrowsInputBlock} from '../../components/pages/create-creature-page/SaveThrowsInputBlock';
 import {QuantitativeBlock} from '../../components/pages/create-creature-page/QuantitativeBlock';
+import {SpeedBlock} from '../../components/pages/create-creature-page/SpeedBlock';
 
 
 export const CreateCreaturePage: React.FC = () => {
@@ -38,6 +39,7 @@ export const CreateCreaturePage: React.FC = () => {
             <StatsInputBlock control={control}/>
             <SaveThrowsInputBlock control={control}/>
             <QuantitativeBlock control={control} wisdom={watchWisdom}/>
+            <SpeedBlock control={control}/>
         </div>
         <button>submit (test)</button>
     </form>
