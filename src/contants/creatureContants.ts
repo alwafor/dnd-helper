@@ -8,9 +8,29 @@ export type TSize = typeof sizes[number]
 export type TWorldView = typeof sizes[number]
 export type TType = typeof sizes[number]
 
+type TStat = 'strength' | 'agility' | 'constitution' | 'intelligence' | 'wisdom' | 'charisma'
+type TSkill = 'athletics'
+    | 'acrobatics'
+    | 'sleightOfHand'
+    | 'stealth'
+    | 'arcana'
+    | 'history'
+    | 'investigation'
+    | 'nature'
+    | 'religion'
+    | 'animalHandling'
+    | 'insight'
+    | 'medicine'
+    | 'perception'
+    | 'survival'
+    | 'deception'
+    | 'intimidation'
+    | 'performance'
+    | 'persuasion'
+
 interface IStatData {
     displayName: string
-    inputName: 'strength' | 'agility' | 'constitution' | 'intelligence' | 'wisdom' | 'charisma'
+    inputName: TStat
 }
 
 interface ISaveThrowStatData {
@@ -29,6 +49,12 @@ interface IVisionData extends IInputData {
 
 interface ISpeedData extends IInputData {
     speedNames: { displayName: string, inputName: 'speed' | 'speedClimb' | 'speedSwim' | 'speedFly' }[]
+}
+
+interface ISkillData {
+    inputName: TSkill
+    displayName: string
+    stat: TStat
 }
 
 export const statsData: IStatData[] = [
@@ -84,3 +110,29 @@ export const visionData: IVisionData = {
     asideValue: '(фут)',
     validateFunction: min0max999999
 }
+
+export const skillsData: ISkillData[] = [
+    {inputName: 'athletics', displayName: 'Атлетика', stat: 'strength'},
+
+    {inputName: 'acrobatics', displayName: 'Акробатика', stat: 'agility'},
+    {inputName: 'sleightOfHand', displayName: 'Ловкость рук', stat: 'agility'},
+    {inputName: 'stealth', displayName: 'Скрытность', stat: 'agility'},
+
+    {inputName: 'arcana', displayName: 'Магия', stat: 'intelligence'},
+    {inputName: 'history', displayName: 'История', stat: 'intelligence'},
+    {inputName: 'investigation', displayName: 'Расследование', stat: 'intelligence'},
+    {inputName: 'nature', displayName: 'Природа', stat: 'intelligence'},
+    {inputName: 'religion', displayName: 'Религия', stat: 'intelligence'},
+
+    {inputName: 'animalHandling', displayName: 'Обращение с животными', stat: 'wisdom'},
+    {inputName: 'insight', displayName: 'Проницательность', stat: 'wisdom'},
+    {inputName: 'medicine', displayName: 'Медицина', stat: 'wisdom'},
+    {inputName: 'perception', displayName: 'Внимательность', stat: 'wisdom'},
+    {inputName: 'survival', displayName: 'Выживание', stat: 'wisdom'},
+
+    {inputName: 'deception', displayName: 'Обман', stat: 'charisma'},
+    {inputName: 'intimidation', displayName: 'Запугивание', stat: 'charisma'},
+    {inputName: 'performance', displayName: 'Выступление', stat: 'charisma'},
+    {inputName: 'persuasion', displayName: 'Убеждение', stat: 'charisma'}
+]
+

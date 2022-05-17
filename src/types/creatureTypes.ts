@@ -42,7 +42,7 @@ export interface ICreatureData {
 
     acrobatics: boolean
     sleightOfHand: boolean
-    Stealth: boolean
+    stealth: boolean
 
     arcana: boolean
     history: boolean
@@ -56,9 +56,9 @@ export interface ICreatureData {
     perception: boolean
     survival: boolean
 
-    Deception: boolean
-    Intimidation: boolean
-    Performance: boolean
-    Persuasion: boolean
+    deception: boolean
+    intimidation: boolean
+    performance: boolean
+    persuasion: boolean
 
 }
