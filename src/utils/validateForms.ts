@@ -16,3 +16,5 @@ export function Validate(formValue: string) {
         }
     }
 }
+
+export const max999999 = (value: string) => Validate(value).integer().max(999999).run()

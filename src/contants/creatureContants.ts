@@ -1,4 +1,4 @@
-import {Validate} from '../utils/validateForms';
+import {max999999} from '../utils/validateForms';
 
 export const types = ['Растение', 'Абберация', 'Гуманоид', 'Великан', 'Фея', 'Слизь', 'Конструкт', 'Нежить', 'Дракон', 'Небожитель', 'Демон', 'Элементаль', 'Чудовище'] as const
 export const worldViews = ['Хаотично-добрый', 'Хаотично-нейтральный', 'Хаотично-злой', 'Нейтрально-добрый', 'Нейтральный', 'Нейтрально-злой', 'Законно-добрый', 'Законно-нейтральный', 'Законно-злой'] as const
@@ -63,6 +63,6 @@ export const speedData: ISpeedData = {
         {displayName: 'Плавание', inputName: 'speedSwim'},
         {displayName: 'Полёт', inputName: 'speedFly'}
     ],
-    validateFunction: (value: string) => Validate(value).integer().max(999999).run(),
+    validateFunction: max999999,
     asideValue: '(фут)'
 }

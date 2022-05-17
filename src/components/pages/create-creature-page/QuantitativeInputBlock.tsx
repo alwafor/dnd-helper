@@ -4,7 +4,7 @@ import {NameSupplier} from '../../reusable/name-supplier/NameSupplier';
 import {Control, Controller} from 'react-hook-form';
 import {Input} from '../../reusable/inputs/Input';
 import {ICreatureData} from '../../../types/creatureTypes';
-import {Validate} from '../../../utils/validateForms';
+import {max999999, Validate} from '../../../utils/validateForms';
 import {difficultyToXp} from '../../../utils/convertations';
 
 interface IProps {
@@ -23,7 +23,7 @@ export const QuantitativeInputBlock: React.FC<IProps> = ({control}) => {
                             render={({field}) =>
                                 <Input {...field}
                                        type={'number'}
-                                       onChange={(e) => field.onChange(Validate(e.target.value).integer().max(999999).run())}
+                                       onChange={(e) => field.onChange(max999999(e.target.value))}
                                 />}
                 />
             </NameSupplier>
@@ -34,7 +34,7 @@ export const QuantitativeInputBlock: React.FC<IProps> = ({control}) => {
                             render={({field}) =>
                                 <Input {...field}
                                        type={'number'}
-                                       onChange={(e) => field.onChange(Validate(e.target.value).integer().max(999999).run())}
+                                       onChange={(e) => field.onChange(max999999(e.target.value))}
                                 />}
                 />
             </NameSupplier>
