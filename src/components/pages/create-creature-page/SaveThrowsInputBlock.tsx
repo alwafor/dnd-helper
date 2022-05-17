@@ -12,6 +12,11 @@ interface IProps {
     proficiencyBonus: string
 }
 
+const getStrSaveThrowBonus = (stat: string, hasSaveThrow: boolean, proficiencyBonus: string): string => {
+    let throwBonus = statToModifier(stat) + (hasSaveThrow ? +proficiencyBonus : 0)
+    return throwBonus > 0 ? '+' + throwBonus : String(throwBonus)
+}
+
 export const SaveThrowsInputBlock: React.FC<IProps> = ({control, stats, proficiencyBonus}) => {
 
     return <div className={styles.inputBlock}>
@@ -23,7 +28,7 @@ export const SaveThrowsInputBlock: React.FC<IProps> = ({control, stats, proficie
                             render={({field}) =>
                                 <Checkbox {...field} text={saveThrow.displayName}
                                           checked={field.value}
-                                          asideValue={`+${statToModifier(stats[i]) + (field.value ? +proficiencyBonus : 0)}`}
+                                          asideValue={getStrSaveThrowBonus(stats[i], field.value, proficiencyBonus)}
                                 />
                             }
                 />
