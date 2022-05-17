@@ -15,6 +15,9 @@ export const CreateCreaturePage: React.FC = () => {
     const {handleSubmit, control, watch} = useForm<ICreatureData>({
         defaultValues: {
             imageUrl: 'https://www.pinclipart.com/picdir/big/36-361692_eps-svg-free-clipart-of-a-silhouetted-griffin.png',
+
+            name: '',
+
             strength: '10',
             agility: '10',
             constitution: '10',
