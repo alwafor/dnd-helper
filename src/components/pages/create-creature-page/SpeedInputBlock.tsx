@@ -10,7 +10,7 @@ interface IProps {
     control: Control<ICreatureData, any>
 }
 
-export const SpeedBlock: React.FC<IProps> = ({control}) => {
+export const SpeedInputBlock: React.FC<IProps> = ({control}) => {
     return <div className={styles.inputBlock}>
         <div className={styles.title}>
             Скорости

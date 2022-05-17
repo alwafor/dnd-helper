@@ -11,7 +11,7 @@ interface IProps {
     control: Control<ICreatureData, any>
 }
 
-export const QuantitativeBlock: React.FC<IProps> = ({control}) => {
+export const QuantitativeInputBlock: React.FC<IProps> = ({control}) => {
     return <div className={styles.inputBlock}>
         <div className={styles.title}>
             Кол. характ.

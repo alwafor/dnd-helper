@@ -6,8 +6,8 @@ import {StatsInputBlock} from '../../components/pages/create-creature-page/Stats
 import {NameInputBlock} from '../../components/pages/create-creature-page/NameInputBlock';
 import {HeadInputBlock} from '../../components/pages/create-creature-page/HeadInputBlock';
 import {SaveThrowsInputBlock} from '../../components/pages/create-creature-page/SaveThrowsInputBlock';
-import {QuantitativeBlock} from '../../components/pages/create-creature-page/QuantitativeBlock';
-import {SpeedBlock} from '../../components/pages/create-creature-page/SpeedBlock';
+import {QuantitativeInputBlock} from '../../components/pages/create-creature-page/QuantitativeInputBlock';
+import {SpeedInputBlock} from '../../components/pages/create-creature-page/SpeedInputBlock';
 
 
 export const CreateCreaturePage: React.FC = () => {
@@ -48,8 +48,8 @@ export const CreateCreaturePage: React.FC = () => {
             <NameInputBlock control={control}/>
             <StatsInputBlock control={control}/>
             <SaveThrowsInputBlock control={control} stats={watchStats} proficiencyBonus={watchProficiencyBonus}/>
-            <QuantitativeBlock control={control}/>
-            <SpeedBlock control={control}/>
+            <QuantitativeInputBlock control={control}/>
+            <SpeedInputBlock control={control}/>
         </div>
         <button>submit (test)</button>
     </form>
