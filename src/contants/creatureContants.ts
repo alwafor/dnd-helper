@@ -1,4 +1,4 @@
-import {max999999} from '../utils/validateForms';
+import {min0max999999} from '../utils/validateForms';
 
 export const types = ['Растение', 'Абберация', 'Гуманоид', 'Великан', 'Фея', 'Слизь', 'Конструкт', 'Нежить', 'Дракон', 'Небожитель', 'Демон', 'Элементаль', 'Чудовище'] as const
 export const worldViews = ['Хаотично-добрый', 'Хаотично-нейтральный', 'Хаотично-злой', 'Нейтрально-добрый', 'Нейтральный', 'Нейтрально-злой', 'Законно-добрый', 'Законно-нейтральный', 'Законно-злой'] as const
@@ -70,7 +70,7 @@ export const speedData: ISpeedData = {
         {displayName: 'Плавание', inputName: 'speedSwim'},
         {displayName: 'Полёт', inputName: 'speedFly'}
     ],
-    validateFunction: max999999,
+    validateFunction: min0max999999,
     asideValue: '(фут)'
 }
 
@@ -82,5 +82,5 @@ export const visionData: IVisionData = {
         {displayName: 'Истинное', inputName: 'visionTrue'}
     ],
     asideValue: '(фут)',
-    validateFunction: max999999
+    validateFunction: min0max999999
 }
