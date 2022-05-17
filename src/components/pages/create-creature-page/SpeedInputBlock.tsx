@@ -17,7 +17,7 @@ export const SpeedInputBlock: React.FC<IProps> = ({control}) => {
         </div>
         <div className={styles.inputBlockInputs + ' ' + styles.block4}>
             {speedData.speedNames.map(speedName =>
-                <NameSupplier name={speedName.displayName}>
+                <NameSupplier name={speedName.displayName} key={speedName.inputName}>
                     <Controller name={speedName.inputName}
                                 control={control}
                                 render={({field}) =>

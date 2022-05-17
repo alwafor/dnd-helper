@@ -17,7 +17,7 @@ export const VisionInputBlock: React.FC<IProps> = ({control}) => {
         </div>
         <div className={styles.inputBlockInputs + ' ' + styles.block4}>
             {visionData.visionNames.map(visionName =>
-                <NameSupplier name={visionName.displayName}>
+                <NameSupplier name={visionName.displayName} key={visionName.inputName}>
                     <Controller name={visionName.inputName}
                                 control={control}
                                 render={({field}) =>

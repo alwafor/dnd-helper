@@ -18,7 +18,8 @@ export const SaveThrowsInputBlock: React.FC<IProps> = ({control, stats, proficie
         <div className={styles.title}>Владение спас. бросками</div>
         <div className={styles.inputBlockInputs + ' ' + styles.block6 + ' ' + styles.withoutNames}>
             {saveThrowsStatsData.map((saveThrow, i) =>
-                <Controller name={saveThrow.inputName} control={control}
+                <Controller name={saveThrow.inputName} key={saveThrow.inputName}
+                            control={control}
                             render={({field}) =>
                                 <Checkbox {...field} text={saveThrow.displayName}
                                           checked={field.value}

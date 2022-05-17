@@ -23,7 +23,8 @@ export const StatsInputBlock: React.FC<IProps> = ({control}) => {
     return  <div className={styles.inputBlock}>
         <div className={styles.title}>Статы</div>
         <div className={styles.inputBlockInputs + ' ' + styles.block6}>
-            {statsData.map(statData => <NameSupplier name={statData.displayName}>
+            {statsData.map(statData =>
+                <NameSupplier name={statData.displayName} key={statData.inputName}>
                     <Controller name={statData.inputName}
                                 control={control}
                                 render={({field}) =>
