@@ -9,6 +9,7 @@ import {SaveThrowsInputBlock} from '../../components/pages/create-creature-page/
 import {QuantitativeInputBlock} from '../../components/pages/create-creature-page/QuantitativeInputBlock';
 import {SpeedInputBlock} from '../../components/pages/create-creature-page/SpeedInputBlock';
 import {VisionInputBlock} from '../../components/pages/create-creature-page/VisionInputBlock';
+import {SkillsInputBlock} from '../../components/pages/create-creature-page/SkillsInputBlock';
 
 export const CreateCreaturePage: React.FC = () => {
 
@@ -67,6 +68,7 @@ export const CreateCreaturePage: React.FC = () => {
             <QuantitativeInputBlock control={control}/>
             <SpeedInputBlock control={control}/>
             <VisionInputBlock control={control}/>
+            <SkillsInputBlock control={control}/>
         </div>
         <button>submit (test)</button>
     </form>

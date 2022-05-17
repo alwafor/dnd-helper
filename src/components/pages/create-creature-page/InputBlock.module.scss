@@ -27,7 +27,19 @@
   .inputBlockInputs.withoutNames > * {
     @apply mt-7;
   }
+
+  .inputBlockInputs.rowflow {
+    @apply gap-x-5;
+  }
+  .inputBlockInputs.rowflow > * {
+    @apply w-auto grow ;
+  }
+  .inputBlockInputs.rowflow > * + * {
+
+  }
 }
 
-
+.inputBlock.full {
+  @apply basis-full;
+}
 
