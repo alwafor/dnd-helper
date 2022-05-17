@@ -5,6 +5,7 @@ import {ICreatureData} from '../../../types/creatureTypes';
 import {Checkbox} from '../../reusable/checkboxes/Checkbox';
 import {saveThrowsStatsData} from '../../../contants/creatureContants';
 import {statToModifier} from '../../../utils/creatureCalculation';
+import {addPlusToPositive} from '../../../utils/stringUtils';
 
 interface IProps {
     control: Control<ICreatureData, any>
@@ -14,7 +15,7 @@ interface IProps {
 
 const getStrSaveThrowBonus = (stat: string, hasSaveThrow: boolean, proficiencyBonus: string): string => {
     let throwBonus = statToModifier(stat) + (hasSaveThrow ? +proficiencyBonus : 0)
-    return throwBonus > 0 ? '+' + throwBonus : String(throwBonus)
+    return addPlusToPositive(throwBonus)
 }
 
 export const SaveThrowsInputBlock: React.FC<IProps> = ({control, stats, proficiencyBonus}) => {

@@ -1,0 +1,1 @@
+export const addPlusToPositive = (n: number) => n > 0 ? '+' + n : String(n)
