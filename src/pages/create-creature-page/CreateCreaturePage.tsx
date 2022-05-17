@@ -8,7 +8,7 @@ import {HeadInputBlock} from '../../components/pages/create-creature-page/HeadIn
 import {SaveThrowsInputBlock} from '../../components/pages/create-creature-page/SaveThrowsInputBlock';
 import {QuantitativeInputBlock} from '../../components/pages/create-creature-page/QuantitativeInputBlock';
 import {SpeedInputBlock} from '../../components/pages/create-creature-page/SpeedInputBlock';
-
+import {VisionInputBlock} from '../../components/pages/create-creature-page/VisionInputBlock';
 
 export const CreateCreaturePage: React.FC = () => {
 
@@ -29,6 +29,11 @@ export const CreateCreaturePage: React.FC = () => {
             speedClimb: '0',
             speedFly: '0',
             speedSwim: '0',
+
+            vision: '30',
+            visionDark: '0',
+            visionBlind: '0',
+            visionTrue: '0',
         }
     })
     const watchImageUrl = watch('imageUrl')
@@ -50,6 +55,7 @@ export const CreateCreaturePage: React.FC = () => {
             <SaveThrowsInputBlock control={control} stats={watchStats} proficiencyBonus={watchProficiencyBonus}/>
             <QuantitativeInputBlock control={control}/>
             <SpeedInputBlock control={control}/>
+            <VisionInputBlock control={control}/>
         </div>
         <button>submit (test)</button>
     </form>

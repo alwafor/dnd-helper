@@ -18,10 +18,17 @@ interface ISaveThrowStatData {
     inputName: 'strengthSaveThrow' | 'agilitySaveThrow' | 'constitutionSaveThrow' | 'intelligenceSaveThrow' | 'wisdomSaveThrow' | 'charismaSaveThrow'
 }
 
-interface ISpeedData {
-    speedNames: { displayName: string, inputName: 'speed' | 'speedClimb' | 'speedSwim' | 'speedFly' }[]
+interface IInputData {
     validateFunction: Function
     asideValue: string
+}
+
+interface IVisionData extends IInputData {
+    visionNames: { displayName: string, inputName: 'vision' | 'visionDark' | 'visionBlind' | 'visionTrue' }[]
+}
+
+interface ISpeedData extends IInputData {
+    speedNames: { displayName: string, inputName: 'speed' | 'speedClimb' | 'speedSwim' | 'speedFly' }[]
 }
 
 export const statsData: IStatData[] = [
@@ -65,4 +72,15 @@ export const speedData: ISpeedData = {
     ],
     validateFunction: max999999,
     asideValue: '(фут)'
+}
+
+export const visionData: IVisionData = {
+    visionNames: [
+        {displayName: 'Обычное', inputName: 'vision'},
+        {displayName: 'Слепое', inputName: 'visionBlind'},
+        {displayName: 'Тёмное', inputName: 'visionDark'},
+        {displayName: 'Истинное', inputName: 'visionTrue'}
+    ],
+    asideValue: '(фут)',
+    validateFunction: max999999
 }
