@@ -25,6 +25,14 @@ export const CreateCreaturePage: React.FC = () => {
             armor: '10',
             hp: '10',
             difficulty: '0',
+
+            strengthSaveThrow: false,
+            agilitySaveThrow: false,
+            constitutionSaveThrow: false,
+            intelligenceSaveThrow: false,
+            wisdomSaveThrow: false,
+            charismaSaveThrow: false,
+
             speed: '30',
             speedClimb: '0',
             speedFly: '0',
