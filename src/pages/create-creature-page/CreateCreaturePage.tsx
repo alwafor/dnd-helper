@@ -51,6 +51,9 @@ export const CreateCreaturePage: React.FC = () => {
     const watchImageUrl = watch('imageUrl')
 
     const watchStats = watch(['strength', 'agility', 'constitution', 'intelligence', 'wisdom', 'charisma'])
+    const namedStats = {
+        'strength': watchStats[0], 'agility': watchStats[1], 'constitution': watchStats[2], 'intelligence': watchStats[3], 'wisdom': watchStats[4], 'charisma': watchStats[5],
+    }
     const watchProficiencyBonus = watch('proficiencyBonus')
 
     useEffect(() => {
@@ -68,7 +71,7 @@ export const CreateCreaturePage: React.FC = () => {
             <QuantitativeInputBlock control={control}/>
             <SpeedInputBlock control={control}/>
             <VisionInputBlock control={control}/>
-            <SkillsInputBlock control={control}/>
+            <SkillsInputBlock control={control} stats={namedStats} proficiencyBonus={watchProficiencyBonus}/>
         </div>
         <button>submit (test)</button>
     </form>
