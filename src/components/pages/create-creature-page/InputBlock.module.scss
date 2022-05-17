@@ -1,12 +1,13 @@
 .inputBlock {
-  @apply basis-[30%];
+  @apply relative basis-[30%];
 
   .title {
-    @apply text-center text-[24px] mb-2 whitespace-nowrap;
+    @apply absolute text-center text-[24px] whitespace-nowrap left-1/2;
+    transform: translateX(-50%);
   }
 
   .inputBlockInputs {
-    @apply flex flex-wrap gap-y-2.5;
+    @apply flex flex-wrap gap-y-2.5 pt-9;
   }
 
   .inputBlockInputs.block4 > * {
