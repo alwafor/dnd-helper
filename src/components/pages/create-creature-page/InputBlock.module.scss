@@ -34,12 +34,31 @@
   .inputBlockInputs.rowflow > * {
     @apply w-auto pr-7;
   }
-  .inputBlockInputs.rowflow > * + * {
+
+  .fullSection {
+
+    &Item {
+      @apply flex;
+      & > *:nth-child(1) {
+        @apply basis-[30%]
+      }
+      & > *:nth-child(2) {
+         @apply grow ml-4;
+       }
+    }
 
   }
+  .fullSectionItem + .fullSectionItem {
+    @apply mt-4;
+  }
+
+  .btnAdd {
+    @apply block mt-4 text-xl mx-auto;
+  }
+
+
 }
 
 .inputBlock.full {
   @apply basis-full;
 }
-

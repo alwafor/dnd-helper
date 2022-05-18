@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import styles from './CreateCreaturePage.module.scss'
-import {useForm} from 'react-hook-form';
+import {useFieldArray, useForm} from 'react-hook-form';
 import {ICreatureData} from '../../types/creatureTypes';
 import {StatsInputBlock} from '../../components/pages/create-creature-page/StatsInputBlock';
 import {NameInputBlock} from '../../components/pages/create-creature-page/NameInputBlock';
@@ -10,6 +10,7 @@ import {QuantitativeInputBlock} from '../../components/pages/create-creature-pag
 import {SpeedInputBlock} from '../../components/pages/create-creature-page/SpeedInputBlock';
 import {VisionInputBlock} from '../../components/pages/create-creature-page/VisionInputBlock';
 import {SkillsInputBlock} from '../../components/pages/create-creature-page/SkillsInputBlock';
+import {ParametersInputBlock} from '../../components/pages/create-creature-page/ParametersInputBlock';
 
 export const CreateCreaturePage: React.FC = () => {
 
@@ -46,8 +47,16 @@ export const CreateCreaturePage: React.FC = () => {
             visionDark: '0',
             visionBlind: '0',
             visionTrue: '0',
+
+            parameters: [{
+                name: '',
+                value: ''
+            }]
         }
     })
+
+    const {fields, append} = useFieldArray<ICreatureData>({control: control, name: 'parameters'})
+
     const watchImageUrl = watch('imageUrl')
 
     const watchStats = watch(['strength', 'agility', 'constitution', 'intelligence', 'wisdom', 'charisma'])
@@ -72,6 +81,8 @@ export const CreateCreaturePage: React.FC = () => {
             <SpeedInputBlock control={control}/>
             <VisionInputBlock control={control}/>
             <SkillsInputBlock control={control} stats={namedStats} proficiencyBonus={watchProficiencyBonus}/>
+            <ParametersInputBlock fields={fields}
+                                  append={append} control={control}/>
         </div>
         <button>submit (test)</button>
     </form>
