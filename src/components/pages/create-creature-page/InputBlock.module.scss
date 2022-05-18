@@ -43,7 +43,7 @@
         @apply basis-[30%]
       }
       & > *:nth-child(2) {
-         @apply grow ml-4;
+         @apply grow mx-4;
        }
     }
 
@@ -54,6 +54,10 @@
 
   .btnAdd {
     @apply block mt-4 text-xl mx-auto;
+  }
+
+  .btnRemove {
+    @apply self-end text-[28px] px-4 py-0 leading-10;
   }
 
 

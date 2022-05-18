@@ -55,7 +55,7 @@ export const CreateCreaturePage: React.FC = () => {
         }
     })
 
-    const {fields, append} = useFieldArray<ICreatureData>({control: control, name: 'parameters'})
+    const {fields, append, remove} = useFieldArray<ICreatureData>({control: control, name: 'parameters'})
 
     const watchImageUrl = watch('imageUrl')
 
@@ -82,7 +82,7 @@ export const CreateCreaturePage: React.FC = () => {
             <VisionInputBlock control={control}/>
             <SkillsInputBlock control={control} stats={namedStats} proficiencyBonus={watchProficiencyBonus}/>
             <ParametersInputBlock fields={fields}
-                                  append={append} control={control}/>
+                                  append={append} control={control} remove={remove}/>
         </div>
         <button>submit (test)</button>
     </form>
