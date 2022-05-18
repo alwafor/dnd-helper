@@ -4,7 +4,7 @@
     @apply mt-7
   }
   .name {
-    @apply text-[18px];
+    @apply text-[18px] whitespace-nowrap;
   }
 }
 .name {
