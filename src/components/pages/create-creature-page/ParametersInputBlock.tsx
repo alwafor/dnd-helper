@@ -29,7 +29,7 @@ export const ParametersInputBlock: React.FC<IProps> = ({fields, append, control,
         <div className={styles.title}>
             Другие параметры
         </div>
-        <div className={styles.fullSection + ' mt-8'}>
+        <div className={styles.fullSection + ' mt-10'}>
             {fields.map((field: any, index) => <div className={styles.fullSectionItem} key={field.id}>
                     <NameSupplier name={'Название параметра'}><Controller control={control} name={`parameters.${index}.name` as const} render={({field}) => <Input {...field}/>}/></NameSupplier>
                     <NameSupplier name={'Значение'}><Controller control={control} name={`parameters.${index}.value` as const} render={({field}) => <Input {...field}/>}/></NameSupplier>
