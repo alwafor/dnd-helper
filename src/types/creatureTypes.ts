@@ -1,5 +1,10 @@
 import {TSize, TType, TWorldView} from '../contants/creatureContants';
 
+interface IParameter {
+    name: string
+    value: string
+}
+
 export interface ICreatureData {
     imageUrl: string
 
@@ -61,4 +66,5 @@ export interface ICreatureData {
     performance: boolean
     persuasion: boolean
 
+    parameters: IParameter[]
 }
