@@ -67,4 +67,5 @@ export interface ICreatureData {
     persuasion: boolean
 
     parameters: IParameter[]
+    actions: IParameter[]
 }
