@@ -12,6 +12,7 @@ import {VisionInputBlock} from '../../components/pages/create-creature-page/Visi
 import {SkillsInputBlock} from '../../components/pages/create-creature-page/SkillsInputBlock';
 import {ParametersInputBlock} from '../../components/pages/create-creature-page/ParametersInputBlock';
 import {ActionsInputBlock} from '../../components/pages/create-creature-page/ActionsInputBlock';
+import {DescriptionInputBlock} from '../../components/pages/create-creature-page/DescriptionInputBlock';
 
 export const CreateCreaturePage: React.FC = () => {
 
@@ -92,7 +93,8 @@ export const CreateCreaturePage: React.FC = () => {
                                   append={appendParameters} remove={removeParameters} control={control} />
             <ActionsInputBlock fields={fieldsActions}
                                append={fieldsAppend} remove={fieldsRemove} control={control}/>
+            <DescriptionInputBlock control={control}/>
         </div>
-        <button>submit (test)</button>
+        <button className={styles.btnSubmit}>submit (test)</button>
     </form>
 };
