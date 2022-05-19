@@ -68,4 +68,6 @@ export interface ICreatureData {
 
     parameters: IParameter[]
     actions: IParameter[]
+
+    description: string
 }
