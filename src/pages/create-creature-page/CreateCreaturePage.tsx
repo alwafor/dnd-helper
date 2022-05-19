@@ -11,6 +11,7 @@ import {SpeedInputBlock} from '../../components/pages/create-creature-page/Speed
 import {VisionInputBlock} from '../../components/pages/create-creature-page/VisionInputBlock';
 import {SkillsInputBlock} from '../../components/pages/create-creature-page/SkillsInputBlock';
 import {ParametersInputBlock} from '../../components/pages/create-creature-page/ParametersInputBlock';
+import {ActionsInputBlock} from '../../components/pages/create-creature-page/ActionsInputBlock';
 
 export const CreateCreaturePage: React.FC = () => {
 
@@ -51,11 +52,17 @@ export const CreateCreaturePage: React.FC = () => {
             parameters: [{
                 name: '',
                 value: ''
+            }],
+
+            actions: [{
+                name: '',
+                value: ''
             }]
         }
     })
 
-    const {fields, append, remove} = useFieldArray<ICreatureData>({control: control, name: 'parameters'})
+    const {fields: fieldsParameters, append: appendParameters, remove: removeParameters} = useFieldArray<ICreatureData>({control: control, name: 'parameters'})
+    const {fields: fieldsActions, append: fieldsAppend, remove: fieldsRemove} = useFieldArray<ICreatureData>({control: control, name: 'actions'})
 
     const watchImageUrl = watch('imageUrl')
 
@@ -81,8 +88,10 @@ export const CreateCreaturePage: React.FC = () => {
             <SpeedInputBlock control={control}/>
             <VisionInputBlock control={control}/>
             <SkillsInputBlock control={control} stats={namedStats} proficiencyBonus={watchProficiencyBonus}/>
-            <ParametersInputBlock fields={fields}
-                                  append={append} control={control} remove={remove}/>
+            <ParametersInputBlock fields={fieldsParameters}
+                                  append={appendParameters} remove={removeParameters} control={control} />
+            <ActionsInputBlock fields={fieldsActions}
+                               append={fieldsAppend} remove={fieldsRemove} control={control}/>
         </div>
         <button>submit (test)</button>
     </form>
