@@ -1,15 +1,16 @@
 import {TSize, TType, TWorldView} from '../contants/creatureContants';
 import {KeysMatching} from './utilityTypes';
 
-interface IParameter {
+interface INameValue {
     name: string
     value: string
 }
 
 export interface ICreatureData {
     imageUrl: string
-
     name: string
+
+    habitat: string
     type: TType
     size: TSize
     worldview: TWorldView
@@ -67,10 +68,13 @@ export interface ICreatureData {
     performance: boolean
     persuasion: boolean
 
-    parameters: IParameter[]
-    actions: IParameter[]
+    parameters: INameValue[]
+    actions: INameValue[]
+    legendaryActions: INameValue[]
+    lairActions: INameValue[]
+    regionalEffects: INameValue[]
 
     description: string
 }
 
-export type TCreatureDataDynamicFields = KeysMatching<ICreatureData, IParameter[]>
+export type TCreatureDataDynamicFields = KeysMatching<ICreatureData, INameValue[]>
