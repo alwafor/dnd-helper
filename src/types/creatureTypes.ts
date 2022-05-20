@@ -1,4 +1,5 @@
 import {TSize, TType, TWorldView} from '../contants/creatureContants';
+import {KeysMatching} from './utilityTypes';
 
 interface IParameter {
     name: string
@@ -71,3 +72,5 @@ export interface ICreatureData {
 
     description: string
 }
+
+export type TCreatureDataDynamicFields = KeysMatching<ICreatureData, IParameter[]>
