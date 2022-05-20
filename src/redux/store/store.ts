@@ -1,8 +1,10 @@
 import {configureStore} from '@reduxjs/toolkit';
 import {createCreatureSlice} from '../reducers/createCreatureReducer';
+import {creaturesSlice} from '../reducers/creaturesReducer';
 
 const rootReducer = {
-    'createCreature': createCreatureSlice.reducer
+    createCreature: createCreatureSlice.reducer,
+    creatures: creaturesSlice.reducer
 }
 
 export const store = configureStore({
