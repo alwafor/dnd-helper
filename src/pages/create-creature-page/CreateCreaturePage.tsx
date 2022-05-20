@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import styles from './CreateCreaturePage.module.scss'
-import {useFieldArray, useForm} from 'react-hook-form';
+import {FieldErrors, useFieldArray, useForm} from 'react-hook-form';
 import {ICreatureData} from '../../types/creatureTypes';
 import {StatsInputBlock} from '../../components/pages/create-creature-page/StatsInputBlock';
 import {NameInputBlock} from '../../components/pages/create-creature-page/NameInputBlock';
@@ -66,6 +66,16 @@ export const CreateCreaturePage: React.FC = () => {
 
     const onSubmit = (data: ICreatureData) => console.log(data)
 
+    const formErrorMessage = (errors: FieldErrors<ICreatureData>) => {
+        if(errors.actions?.length) return 'Поля действий не заполнены!'
+        if(errors.parameters?.length) return 'Поля действий не заполнены!'
+
+        if(errors.name?.type === 'required') return 'Имя не заполнено!'
+        if(errors.type?.type === 'required') return 'Тип не выбран!'
+        if(errors.worldview?.type === 'required') return 'Мировоззрение не выбрано!'
+        if(errors.size?.type === 'required') return 'Размер не выбран!'
+    }
+
     return <form className={styles.root} onSubmit={handleSubmit(onSubmit)}>
         <HeadInputBlock watchImageUrl={watchImageUrl} control={control}/>
         <div className={styles.inputBlocksWrapper}>
@@ -100,6 +110,7 @@ export const CreateCreaturePage: React.FC = () => {
 
             <DescriptionInputBlock control={control}/>
         </div>
-        <button className={styles.btnSubmit}>submit (test)</button>
+        <div className={styles.error}>{formErrorMessage(errors)}</div>
+        <Button className={styles.btnSubmit}>Завершить создание</Button>
     </form>
 };
