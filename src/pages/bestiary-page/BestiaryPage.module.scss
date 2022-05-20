@@ -1,0 +1,16 @@
+.bestiaryPage {
+  @apply grow;
+  .head {
+    @apply w-full;
+    &Img {
+      @apply w-[256px] h-[256px] block mx-auto;
+    }
+    .title {
+      @apply text-center text-[36px];
+    }
+  }
+
+  .creaturesWrapper {
+    @apply flex mt-[60px];
+  }
+}
