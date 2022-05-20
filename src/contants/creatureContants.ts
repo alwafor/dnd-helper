@@ -4,9 +4,9 @@ export const types = ['Растение', 'Абберация', 'Гуманои�
 export const worldViews = ['Хаотично-добрый', 'Хаотично-нейтральный', 'Хаотично-злой', 'Нейтрально-добрый', 'Нейтральный', 'Нейтрально-злой', 'Законно-добрый', 'Законно-нейтральный', 'Законно-злой'] as const
 export const sizes = ['Мелкий', 'Маленький', 'Средний', 'Большой', 'Огромный', 'Гигантский'] as const
 
+export type TType = typeof types[number]
+export type TWorldView = typeof worldViews[number]
 export type TSize = typeof sizes[number]
-export type TWorldView = typeof sizes[number]
-export type TType = typeof sizes[number]
 
 type TStat = 'strength' | 'agility' | 'constitution' | 'intelligence' | 'wisdom' | 'charisma'
 type TSkill = 'athletics'
