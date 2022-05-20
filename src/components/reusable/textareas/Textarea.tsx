@@ -5,8 +5,8 @@ interface IProps extends React.DetailedHTMLProps<React.TextareaHTMLAttributes<HT
 
 }
 
-export const Textarea: React.FC<IProps> = ({children, className, ...rest}) => {
-    return <textarea className={styles.root + ' ' + className} {...rest}>
+export const Textarea = React.forwardRef<HTMLTextAreaElement, IProps>(({children, className, ...rest}, ref) => {
+    return <textarea className={styles.root + ' ' + className} ref={ref} {...rest}>
         {children}
     </textarea>
-};
+});
