@@ -4,10 +4,11 @@ import styles from './NameSupplier.module.scss'
 interface IProps {
     name: string
     children: React.ReactNode
+    className?: string
 }
 
-export const NameSupplier: React.FC<IProps> = ({name, children}) => {
-    return <div className={styles.nameSupplier}>
+export const NameSupplier: React.FC<IProps> = ({name, className, children}) => {
+    return <div className={styles.nameSupplier + (className ? ' ' + className : '')}>
         <div className={styles.name}>
             {name}
         </div>
