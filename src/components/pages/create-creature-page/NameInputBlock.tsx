@@ -12,17 +12,18 @@ interface IProps {
 }
 
 export const NameInputBlock: React.FC<IProps> = ({control}) => {
-    return  <div className={styles.inputBlock}>
+    return <div className={styles.inputBlock}>
         <div className={styles.title}>
             Базовая информация
         </div>
         <div className={styles.inputBlockInputs + ' ' + styles.block4}>
-            <NameSupplier name={'Имя'}>
-                <Controller name={'name'} control={control} render={({field}) => <Input {...field}/>}/>
+            <NameSupplier name={'Место обитания'}>
+                <Controller name={'habitat'} control={control}
+                            render={({field}) => <Input {...field}/>}/>
             </NameSupplier>
 
             <NameSupplier name={'Тип'}>
-                <Controller name={'type'} control={control}
+                <Controller name={'type'} control={control} rules={{required: true}}
                             render={({field}) => <Select {...field} defaultValue={'undefined'}>
                                 <option disabled value={'undefined'}>Выбор...</option>
                                 {types.map(type => <option key={type} value={type}>{type}</option>)}
@@ -30,7 +31,7 @@ export const NameInputBlock: React.FC<IProps> = ({control}) => {
             </NameSupplier>
 
             <NameSupplier name={'Размер'}>
-                <Controller name={'size'} control={control}
+                <Controller name={'size'} control={control} rules={{required: true}}
                             render={({field}) => <Select {...field} defaultValue={'undefined'}>
                                 <option disabled value={'undefined'}>Выбор...</option>
                                 {sizes.map(size => <option key={size} value={size}>{size}</option>)}
@@ -38,13 +39,14 @@ export const NameInputBlock: React.FC<IProps> = ({control}) => {
             </NameSupplier>
 
             <NameSupplier name={'Мировоззрение'}>
-                <Controller name={'worldview'} control={control}
+                <Controller name={'worldview'} control={control} rules={{required: true}}
                             render={({field}) => <Select {...field} defaultValue={'undefined'}>
                                 <option disabled value={'undefined'}>Выбор...</option>
                                 {worldViews.map(worldView => <option key={worldView}
                                                                      value={worldView}>{worldView}</option>)}
                             </Select>}/>
             </NameSupplier>
+
         </div>
 
 

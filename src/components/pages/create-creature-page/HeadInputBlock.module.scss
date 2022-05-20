@@ -1,5 +1,15 @@
 .imageLoader {
   @apply flex flex-col items-center;
+
+  .row {
+    @apply flex items-center mt-4 w-full;
+    & > * {
+      @apply basis-1/2;
+    }
+    & > *:nth-child(1) {
+      @apply mr-[5%]
+    }
+  }
 }
 .imageWrapper {
   @apply relative w-[250px] h-[250px] mb-2.5;

@@ -15,9 +15,16 @@ export const HeadInputBlock: React.FC<IProps> = ({control, watchImageUrl}) => {
         <div className={styles.imageWrapper}>
             <img className={styles.image} src={watchImageUrl} alt="some image"/>
         </div>
-        <NameSupplier name={'Изображение'}>
-            <Controller name={'imageUrl'} control={control}
-                        render={({field}) => <Input {...field} placeholder={'Ссылка...'}/>}/>
-        </NameSupplier>
+        <div className={styles.row}>
+            <NameSupplier name={'Имя'}>
+                <Controller name={'name'} control={control} rules={{required: true}}
+                            render={({field}) => <Input {...field}/>}/>
+            </NameSupplier>
+            <NameSupplier name={'Изображение'}>
+                <Controller name={'imageUrl'} control={control}
+                            render={({field}) => <Input {...field} placeholder={'Ссылка...'}/>}/>
+            </NameSupplier>
+        </div>
+
     </div>
 };
