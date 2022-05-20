@@ -10,9 +10,10 @@ import {QuantitativeInputBlock} from '../../components/pages/create-creature-pag
 import {SpeedInputBlock} from '../../components/pages/create-creature-page/SpeedInputBlock';
 import {VisionInputBlock} from '../../components/pages/create-creature-page/VisionInputBlock';
 import {SkillsInputBlock} from '../../components/pages/create-creature-page/SkillsInputBlock';
-import {ParametersInputBlock} from '../../components/pages/create-creature-page/ParametersInputBlock';
-import {ActionsInputBlock} from '../../components/pages/create-creature-page/ActionsInputBlock';
 import {DescriptionInputBlock} from '../../components/pages/create-creature-page/DescriptionInputBlock';
+import {DynamicNameValueInputBlock} from '../../components/pages/create-creature-page/DynamicNameValueInputBlock';
+import {Textarea} from '../../components/reusable/textareas/Textarea';
+import {Input} from '../../components/reusable/inputs/Input';
 
 export const CreateCreaturePage: React.FC = () => {
 
@@ -62,14 +63,27 @@ export const CreateCreaturePage: React.FC = () => {
         }
     })
 
-    const {fields: fieldsParameters, append: appendParameters, remove: removeParameters} = useFieldArray<ICreatureData>({control: control, name: 'parameters'})
-    const {fields: fieldsActions, append: fieldsAppend, remove: fieldsRemove} = useFieldArray<ICreatureData>({control: control, name: 'actions'})
+    const {
+        fields: fieldsParameters,
+        append: appendParameter,
+        remove: removeParameter
+    } = useFieldArray<ICreatureData>({control: control, name: 'parameters'})
+    const {
+        fields: fieldsActions,
+        append: appendAction,
+        remove: removeAction
+    } = useFieldArray<ICreatureData>({control: control, name: 'actions'})
 
     const watchImageUrl = watch('imageUrl')
 
     const watchStats = watch(['strength', 'agility', 'constitution', 'intelligence', 'wisdom', 'charisma'])
     const namedStats = {
-        'strength': watchStats[0], 'agility': watchStats[1], 'constitution': watchStats[2], 'intelligence': watchStats[3], 'wisdom': watchStats[4], 'charisma': watchStats[5],
+        'strength': watchStats[0],
+        'agility': watchStats[1],
+        'constitution': watchStats[2],
+        'intelligence': watchStats[3],
+        'wisdom': watchStats[4],
+        'charisma': watchStats[5]
     }
     const watchProficiencyBonus = watch('proficiencyBonus')
 
@@ -89,10 +103,19 @@ export const CreateCreaturePage: React.FC = () => {
             <SpeedInputBlock control={control}/>
             <VisionInputBlock control={control}/>
             <SkillsInputBlock control={control} stats={namedStats} proficiencyBonus={watchProficiencyBonus}/>
-            <ParametersInputBlock fields={fieldsParameters}
-                                  append={appendParameters} remove={removeParameters} control={control} />
-            <ActionsInputBlock fields={fieldsActions}
-                               append={fieldsAppend} remove={fieldsRemove} control={control}/>
+
+            <DynamicNameValueInputBlock fields={fieldsParameters} append={appendParameter} control={control}
+                                        remove={removeParameter} ValueComponent={Input} dynamicFormName={'parameters'}
+                                        title={'Другие параметры'} nameFieldName={'Название'}
+                                        valueFieldName={'Значение'}
+            />
+
+            <DynamicNameValueInputBlock fields={fieldsActions} append={appendAction} control={control}
+                                        remove={removeAction} ValueComponent={Textarea} dynamicFormName={'actions'}
+                                        title={'Действия'} nameFieldName={'Название действия'}
+                                        valueFieldName={'Значение'} isRemoveButtonOnTop={true}
+            />
+
             <DescriptionInputBlock control={control}/>
         </div>
         <button className={styles.btnSubmit}>submit (test)</button>
