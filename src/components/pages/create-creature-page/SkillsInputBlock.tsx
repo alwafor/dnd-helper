@@ -22,6 +22,7 @@ export const SkillsInputBlock: React.FC<IProps> = ({control, stats, proficiencyB
             {skillsData.map(skillData =>
                 <Controller name={skillData.inputName}
                             control={control}
+                            key={skillData.inputName}
                             render={({field}) =>
                                 <Checkbox {...field}
                                           text={skillData.displayName}
