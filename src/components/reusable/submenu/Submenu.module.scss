@@ -3,11 +3,11 @@
 }
 /////////
 .head {
-  @apply w-full bg-cold py-2.5 px-2 flex justify-between items-center shadow-xl cursor-pointer hover:bg-cold-dark;
+  @apply w-full py-2.5 px-2 flex items-center cursor-pointer hover:text-cold-dark;
 }
 
 .headName {
-  @apply ml-2 italic font-semibold;
+  @apply ml-2 italic font-semibold text-[20px] mr-4;
 }
 
 .headImage {
@@ -18,11 +18,14 @@
 }
 /////////
 .submenuItem {
-  @apply block bg-golden w-full flex py-2.5 px-2 hover:bg-putty;
+  @apply flex items-center text-[16px] w-full flex py-2.5 px-2 hover:bg-putty;
 
   &.active {
-    @apply bg-putty;
+    @apply text-cold-dark;
+
   }
+
+
 }
 
 

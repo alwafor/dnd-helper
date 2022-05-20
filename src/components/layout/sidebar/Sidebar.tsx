@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './Sidebar.module.scss'
 import {ISubmenuProps, Submenu} from '../../reusable/submenu/Submenu';
 import imgEye from '../../../assets/images/icons/creature-icon-1.svg'
 import imgWolf from '../../../assets/images/icons/creature-icon-2.svg'
@@ -14,8 +15,6 @@ export const Sidebar: React.FC<IProps> = () => {
     const navigate = useNavigate()
 
     const navigateTo = (path: string) => () => navigate(path)
-
-
 
     const menuItems: ISubmenuProps[] = [
         {
@@ -37,7 +36,7 @@ export const Sidebar: React.FC<IProps> = () => {
         }
     ]
 
-    return <div className={'basis-[315px]'}>
+    return <div className={styles.root}>
         {menuItems.map(menuElement => <Submenu key={menuElement.name} {...menuElement}/>)}
     </div>
 };
