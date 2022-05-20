@@ -28,11 +28,24 @@ export const CreateCreaturePage: React.FC = () => {
         append: appendParameter,
         remove: removeParameter
     } = useFieldArray<ICreatureData>({control: control, name: 'parameters'})
+
     const {
         fields: fieldsActions,
         append: appendAction,
         remove: removeAction
     } = useFieldArray<ICreatureData>({control: control, name: 'actions'})
+
+    const {
+        fields: fieldsLairActions,
+        append: appendLairAction,
+        remove: removeLairAction
+    } = useFieldArray<ICreatureData>({control: control, name: 'lairActions'})
+
+    const {
+        fields: fieldsRegionalEffects,
+        append: appendRegionalEffect,
+        remove: removeRegionalEffect
+    } = useFieldArray<ICreatureData>({control: control, name: 'regionalEffects'})
 
     const watchImageUrl = watch('imageUrl')
 
@@ -69,10 +82,19 @@ export const CreateCreaturePage: React.FC = () => {
                                         title={'Другие параметры'} nameFieldName={'Название'}
                                         valueFieldName={'Значение'}
             />
-
             <DynamicNameValueInputBlock fields={fieldsActions} append={appendAction} control={control}
                                         remove={removeAction} ValueComponent={Textarea} dynamicFormName={'actions'}
-                                        title={'Действия'} nameFieldName={'Название действия'}
+                                        title={'Действия'} nameFieldName={'Название'}
+                                        valueFieldName={'Значение'} isRemoveButtonOnTop={true}
+            />
+            <DynamicNameValueInputBlock fields={fieldsLairActions} append={appendLairAction} control={control}
+                                        remove={removeLairAction} ValueComponent={Textarea} dynamicFormName={'lairActions'}
+                                        title={'Действия Логова'} nameFieldName={'Название'}
+                                        valueFieldName={'Значение'} isRemoveButtonOnTop={true}
+            />
+            <DynamicNameValueInputBlock fields={fieldsRegionalEffects} append={appendRegionalEffect} control={control}
+                                        remove={removeRegionalEffect} ValueComponent={Textarea} dynamicFormName={'regionalEffects'}
+                                        title={'Эффекты местности'} nameFieldName={'Название'}
                                         valueFieldName={'Значение'} isRemoveButtonOnTop={true}
             />
 
