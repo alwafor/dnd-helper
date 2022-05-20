@@ -14,7 +14,7 @@ export const DescriptionInputBlock: React.FC<IProps> = ({control}) => {
             Описание
         </div>
         <div className={styles.fullSection + ' mt-10'}>
-            <Controller control={control} name={'description'} render={({field}) => <Textarea {...field}/>}/>
+            <Controller control={control} name={'description'} render={({field}) => <Textarea {...field} placeholder={'Это поле необязательно...'}/>}/>
         </div>
     </div>
 };
