@@ -37,6 +37,11 @@ export const Sidebar: React.FC<IProps> = () => {
     ]
 
     return <div className={styles.root}>
-        {menuItems.map(menuElement => <Submenu key={menuElement.name} {...menuElement}/>)}
+        <div className={styles.appTitle}>
+            DnD Helper
+        </div>
+        <div className={styles.menu}>
+            {menuItems.map(menuElement => <Submenu key={menuElement.name} {...menuElement}/>)}
+        </div>
     </div>
 };
