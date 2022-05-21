@@ -7,6 +7,7 @@ import {statToModifier} from '../../../utils/creatureCalculation';
 import {statsData} from '../../../contants/creatureContants';
 import {ICreatureData} from '../../../types/creatureTypes';
 import {Validate} from '../../../utils/validateForms';
+import {addPlusToPositive} from '../../../utils/stringUtils';
 
 interface IProps {
     control: Control<ICreatureData, any>
@@ -25,7 +26,7 @@ export const StatsInputBlock: React.FC<IProps> = ({control}) => {
                                            onChange={(e) => {
                                                field.onChange(Validate(e.target.value).integer().min(0).max(30).run())
                                            }}
-                                           asideValue={`(${statToModifier(field.value)})`}
+                                           asideValue={`(${addPlusToPositive(statToModifier(field.value))})`}
                                     />}
                     />
                 </NameSupplier>
