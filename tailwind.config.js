@@ -17,7 +17,8 @@ module.exports = {
         'putty': '#e9ce7d',
         'cold': '#9a9ad9',
         'cold-dark': '#7070D8',
-        'black-075': 'rgba(0,0,0,0.75)'
+        'black-075': 'rgba(0,0,0,0.75)',
+        'red': '#7a0000'
       }
     },
   },
