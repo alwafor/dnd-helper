@@ -11,6 +11,6 @@
   }
 
   .creaturesWrapper {
-    @apply flex mt-[60px];
+    @apply flex flex-wrap  gap-y-6 gap-x-[1%] mt-[60px];
   }
 }

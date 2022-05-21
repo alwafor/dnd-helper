@@ -14,7 +14,7 @@ export const BestiaryPage: React.FC = () => {
             <div className={styles.title}>Бестиарий</div>
         </div>
         <div className={styles.creaturesWrapper}>
-            <CreatureCard creatureData={allCreatures[0]}/>
+            {allCreatures.map(creature => <CreatureCard key={creature.name} creatureData={creature}/>)}
         </div>
     </div>
 };
