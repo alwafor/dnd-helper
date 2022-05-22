@@ -5,10 +5,11 @@ import {formHeadDescStr, getCreatureStats} from '../../../../utils/creatureCalcu
 
 interface IProps {
     creatureData: ICreatureData
+    onClick: Function
 }
 
-export const CreatureCard: React.FC<IProps> = ({creatureData}) => {
-    return <div className={styles.creatureCard}>
+export const CreatureCard: React.FC<IProps> = ({creatureData, onClick}) => {
+    return <div className={styles.creatureCard} onClick={() => onClick(creatureData.name)}>
         <div className={styles.head}>
             <img src={creatureData.imageUrl} alt={'noimg'}/>
             <div className={styles.name}>{creatureData.name}</div>
