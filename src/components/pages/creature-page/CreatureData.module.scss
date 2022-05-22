@@ -10,6 +10,10 @@
   }
 
   span.red {
-    @apply text-red;
+    @apply text-red font-bold;
+  }
+
+  span.mr {
+    @apply mr-2;
   }
 }
