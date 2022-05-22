@@ -11,3 +11,10 @@ export function getCreatureStats({strength, agility, constitution, intelligence,
 export function formHeadDescStr({size, type, worldview}: ICreatureData) {
     return `${size[0].toUpperCase() + size.slice(1)}, ${type}, ${worldview}`
 }
+
+export const formSpeedStr = ({speed, speedClimb, speedFly, speedSwim}: ICreatureData) => {
+    return `${speed} футов`
+        + (+speedClimb > 0 ? `, ползая ${speedClimb} футов` : '')
+        + (+speedFly > 0 ? `, летая ${speedFly} футов` : '')
+        + (+speedSwim > 0 ? `, плавая ${speedSwim} футов` : '')
+}

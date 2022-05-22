@@ -1,0 +1,15 @@
+.creatureData {
+  @apply w-full bg-milk p-2 mt-4;
+
+  .title {
+    @apply text-red text-[22px];
+  }
+
+  hr {
+    @apply border-0 my-[7.5px] bg-red h-[1px];
+  }
+
+  span.red {
+    @apply text-red;
+  }
+}
