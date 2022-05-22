@@ -1,5 +1,5 @@
 .creatureCard {
-  @apply relative leading-[16px] basis-[19%];
+  @apply relative leading-[16px] basis-[19%] select-none;
 
   .head, .body {
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
