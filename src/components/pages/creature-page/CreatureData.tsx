@@ -19,6 +19,8 @@ export const CreatureData: React.FC<IProps> = ({creatureData}) => {
 
         <hr/>
 
+        <img className={styles.creatureImg} src={creatureData.imageUrl} alt="creature"/>
+
         <p><span className={styles.red}>КД</span> {creatureData.armor}</p>
         <p><span className={styles.red}>ХП</span> {creatureData.hp}</p>
         <p><span className={styles.red}>Скорость</span> {formSpeedStr(creatureData)}</p>
