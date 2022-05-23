@@ -1,7 +1,7 @@
 import {TSize, TType, TWorldView} from '../contants/creatureContants';
 import {KeysMatching} from './utilityTypes';
 
-interface INameValue {
+export interface INameValue {
     name: string
     value: string
 }

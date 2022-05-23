@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './CreatureData.module.scss'
-import {ICreatureData} from '../../../types/creatureTypes';
+import {ICreatureData, INameValue} from '../../../types/creatureTypes';
 import {formHeadDescStr, formSpeedStr, formVisionStr, statToModifier} from '../../../utils/creatureCalculation';
 import {addPlusToPositive} from '../../../utils/stringUtils';
 import {difficultyToXp, percToPassivePerc} from '../../../utils/convertations';
@@ -50,19 +50,17 @@ export const CreatureData: React.FC<IProps> = ({creatureData}) => {
                     </span>
         </div>
 
-        <div className={styles.subtitle}>Действия</div>
+        {creatureData.actions.length > 0
+            && <Actions title={'Действия'} actions={creatureData.actions}/>}
 
-        <hr/>
+        {creatureData.legendaryActions.length > 0
+            && <Actions title={'Легендарные действия'} actions={creatureData.legendaryActions}/>}
 
-        {creatureData.actions.map(action => <div><span
-            className={styles.highlight}>{action.name}:</span> {action.value}</div>)}
+        {creatureData.lairActions.length > 0
+            && <Actions title={'Действия логова'} actions={creatureData.lairActions}/>}
 
-        <div className={styles.subtitle}>Легендарные действия</div>
-
-        <hr/>
-
-        {creatureData.legendaryActions.map(action => <div><span
-            className={styles.highlight}>{action.name}:</span> {action.value}</div>)}
+        {creatureData.regionalEffects.length > 0 &&
+            <Actions title={'Эффекты местности'} actions={creatureData.regionalEffects}/>}
     </div>
 };
 
@@ -72,5 +70,15 @@ const Stat: React.FC<{ stat: string, name: string }> = ({name, stat}) => {
         <span className={styles.mr}>
             {stat} ({addPlusToPositive(statToModifier(stat))})
         </span>
+    </>
+}
+
+const Actions: React.FC<{ actions: INameValue[], title: string }> = ({actions, title}) => {
+    return <>
+        <div className={styles.subtitle}>{title}</div>
+
+        <hr/>
+        {actions.map(action => <div><span
+            className={styles.highlight}>{action.name}:</span> {action.value}</div>)}
     </>
 }
