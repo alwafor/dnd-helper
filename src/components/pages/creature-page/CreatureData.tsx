@@ -28,20 +28,23 @@ export const CreatureData: React.FC<IProps> = ({creatureData}) => {
         </DataBlock>
         <DataBlock>
             <>
-                <span>
-                    <Stat name={'СИЛ'} stat={creatureData.strength}/>
-                    <Stat name={'ЛОВ'} stat={creatureData.agility}/>
-                    <Stat name={'ТЕЛ'} stat={creatureData.constitution}/>
-                    <Stat name={'ИНТ'} stat={creatureData.intelligence}/>
-                    <Stat name={'МДР'} stat={creatureData.wisdom}/>
-                    <Stat name={'ХАР'} stat={creatureData.charisma}/>
-                </span>
+                <Stat name={'СИЛ'} stat={creatureData.strength}/>
+                <Stat name={'ЛОВ'} stat={creatureData.agility}/>
+                <Stat name={'ТЕЛ'} stat={creatureData.constitution}/>
+                <Stat name={'ИНТ'} stat={creatureData.intelligence}/>
+                <Stat name={'МДР'} stat={creatureData.wisdom}/>
+                <Stat name={'ХАР'} stat={creatureData.charisma}/>
+            </>
+        </DataBlock>
+        <DataBlock>
+            <>
+                {creatureData.parameters.map(param => <div> <span className={styles.highlight}>{param.name}:</span> {param.value}</div>)}
             </>
         </DataBlock>
     </div>
 };
 
-const Stat: React.FC<{stat: string, name: string}> = ({name, stat}) => {
+const Stat: React.FC<{ stat: string, name: string }> = ({name, stat}) => {
     return <>
         <span className={styles.red}>{name} </span> <span
         className={styles.mr}>{stat} ({addPlusToPositive(statToModifier(stat))})</span>

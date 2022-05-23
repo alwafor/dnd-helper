@@ -13,6 +13,10 @@
     @apply text-red font-bold;
   }
 
+  span.highlight {
+    @apply font-bold italic;
+  }
+
   span.mr {
     @apply mr-2;
   }
