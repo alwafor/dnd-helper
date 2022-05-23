@@ -1,9 +1,13 @@
 .creatureData {
   @apply relative w-full bg-milk p-2 mt-4;
 
-  .creatureImg {
-    @apply w-[250px] h-[250px] border-4 border-red float-right right-0 top-[100px] bg-milk rounded-full;
+  .imgHolder {
+    @apply relative w-[250px] h-[250px] float-right top-[0px] bg-milk;
+    .creatureImg {
+      @apply drop-shadow-2xl absolute w-full h-full object-cover border-4 border-red right-0 left-0 top-0 bottom-0 rounded-full;
+    }
   }
+
 
   .title {
     @apply text-red text-[22px];

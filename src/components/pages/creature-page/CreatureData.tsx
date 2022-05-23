@@ -18,8 +18,9 @@ export const CreatureData: React.FC<IProps> = ({creatureData}) => {
         <p>Место обитания: {creatureData.habitat}</p>
 
         <hr/>
-
-        <img className={styles.creatureImg} src={creatureData.imageUrl} alt="creature"/>
+        <div className={styles.imgHolder}>
+            <img className={styles.creatureImg} src={creatureData.imageUrl} alt="creature"/>
+        </div>
 
         <p><span className={styles.red}>КД</span> {creatureData.armor}</p>
         <p><span className={styles.red}>ХП</span> {creatureData.hp}</p>
