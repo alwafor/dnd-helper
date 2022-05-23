@@ -62,6 +62,12 @@ export const CreatureData: React.FC<IProps> = ({creatureData}) => {
 
         {creatureData.regionalEffects.length > 0 &&
             <Actions title={'Эффекты местности'} actions={creatureData.regionalEffects}/>}
+
+        {creatureData.description !== '' && <>
+            <div className={styles.subtitle}>Описание</div>
+            <hr/>
+            <div>{creatureData.description}</div>
+        </>}
     </div>
 };
 
