@@ -5,6 +5,10 @@
     @apply text-red text-[22px];
   }
 
+  .subtitle {
+    @apply text-red text-[20px] mt-2 indent-2;
+  }
+
   hr {
     @apply border-0 my-[7.5px] bg-red h-[1px];
   }
@@ -17,7 +21,15 @@
     @apply font-bold italic;
   }
 
+  span.gray {
+    @apply text-gray-500;
+  }
+
   span.mr {
     @apply mr-2;
+  }
+
+  div + div {
+    @apply mt-2;
   }
 }
