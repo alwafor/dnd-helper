@@ -18,3 +18,10 @@ export const formSpeedStr = ({speed, speedClimb, speedFly, speedSwim}: ICreature
         + (+speedFly > 0 ? `, летая ${speedFly} футов` : '')
         + (+speedSwim > 0 ? `, плавая ${speedSwim} футов` : '')
 }
+
+export const formVisionStr = ({vision, visionBlind, visionDark, visionTrue}: ICreatureData) => {
+    return `зрение ${vision} футов`
+    + (+visionBlind > 0 ? `, слепозрение ${visionBlind} футов` : '')
+    + (+visionDark > 0 ? `, тёмнозрение ${visionDark} футов` : '')
+    + (+visionTrue > 0 ? `, истинное зрение ${visionTrue} футов` : '')
+}
