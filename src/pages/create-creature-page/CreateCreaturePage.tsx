@@ -44,6 +44,12 @@ export const CreateCreaturePage: React.FC = () => {
     } = useFieldArray<ICreatureData>({control: control, name: 'actions'})
 
     const {
+        fields: fieldsLegendaryActions,
+        append: appendLegendaryAction,
+        remove: removeLegendaryAction
+    } = useFieldArray<ICreatureData>({control: control, name: 'legendaryActions'})
+
+    const {
         fields: fieldsLairActions,
         append: appendLairAction,
         remove: removeLairAction
@@ -108,6 +114,11 @@ export const CreateCreaturePage: React.FC = () => {
             <DynamicNameValueInputBlock fields={fieldsActions} append={appendAction} control={control}
                                         remove={removeAction} ValueComponent={Textarea} dynamicFormName={'actions'}
                                         title={'Действия'} nameFieldName={'Название'}
+                                        valueFieldName={'Значение'} isRemoveButtonOnTop={true}
+            />
+            <DynamicNameValueInputBlock fields={fieldsLegendaryActions} append={appendLegendaryAction} control={control}
+                                        remove={removeLegendaryAction} ValueComponent={Textarea} dynamicFormName={'legendaryActions'}
+                                        title={'Легендарный действия'} nameFieldName={'Название'}
                                         valueFieldName={'Значение'} isRemoveButtonOnTop={true}
             />
             <DynamicNameValueInputBlock fields={fieldsLairActions} append={appendLairAction} control={control}
