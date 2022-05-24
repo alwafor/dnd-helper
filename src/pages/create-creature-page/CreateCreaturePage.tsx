@@ -32,6 +32,12 @@ export const CreateCreaturePage: React.FC = () => {
     } = useFieldArray<ICreatureData>({control: control, name: 'parameters'})
 
     const {
+        fields: fieldsFeatures,
+        append: appendFeature,
+        remove: removeFeature
+    } = useFieldArray<ICreatureData>({control: control, name: 'features'})
+
+    const {
         fields: fieldsActions,
         append: appendAction,
         remove: removeAction
@@ -93,6 +99,11 @@ export const CreateCreaturePage: React.FC = () => {
                                         remove={removeParameter} ValueComponent={Input} dynamicFormName={'parameters'}
                                         title={'Другие параметры'} nameFieldName={'Название'}
                                         valueFieldName={'Значение'}
+            />
+            <DynamicNameValueInputBlock fields={fieldsFeatures} append={appendFeature} control={control}
+                                        remove={removeFeature} ValueComponent={Textarea} dynamicFormName={'features'}
+                                        title={'Особенности'} nameFieldName={'Название'}
+                                        valueFieldName={'Значение'} isRemoveButtonOnTop={true}
             />
             <DynamicNameValueInputBlock fields={fieldsActions} append={appendAction} control={control}
                                         remove={removeAction} ValueComponent={Textarea} dynamicFormName={'actions'}
