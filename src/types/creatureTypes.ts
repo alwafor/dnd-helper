@@ -69,6 +69,7 @@ export interface ICreatureData {
     persuasion: boolean
 
     parameters: INameValue[]
+    features: INameValue[]
     actions: INameValue[]
     legendaryActions: INameValue[]
     lairActions: INameValue[]
