@@ -59,6 +59,15 @@ export const CreatureData: React.FC<IProps> = ({creatureData}) => {
                     </span>
         </div>
 
+        {creatureData.features.length > 0 && <>
+            <hr/>
+            {creatureData.features.map(action => <div><span
+                className={styles.highlight}>{action.name}:</span> {action.value}</div>)}
+        </>}
+
+        {creatureData.features.length > 0 &&
+            <Actions title={'Особенности'} actions={creatureData.features}/>}
+
         {creatureData.actions.length > 0
             && <Actions title={'Действия'} actions={creatureData.actions}/>}
 
