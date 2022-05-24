@@ -15,11 +15,13 @@ import {DynamicNameValueInputBlock} from '../../components/pages/create-creature
 import {Textarea} from '../../components/reusable/textareas/Textarea';
 import {Input} from '../../components/reusable/inputs/Input';
 import {Button} from '../../components/reusable/buttons/Button';
-import {useAppSelector} from '../../hooks/redux';
+import {useAppDispatch, useAppSelector} from '../../hooks/redux';
+import {creaturesSlice} from '../../redux/reducers/creaturesReducer';
 
 export const CreateCreaturePage: React.FC = () => {
 
     const formValues = useAppSelector(state => state.createCreature.formValues)
+    const dispatch = useAppDispatch()
 
     const {handleSubmit, control, watch, formState: {errors}} = useForm<ICreatureData>({
         defaultValues: formValues
@@ -78,7 +80,9 @@ export const CreateCreaturePage: React.FC = () => {
         console.log(watchImageUrl)
     }, [watchImageUrl])
 
-    const onSubmit = (data: ICreatureData) => console.log(data)
+    const onSubmit = (data: ICreatureData) => {
+        dispatch(creaturesSlice.actions.addCreature(data))
+    }
 
     const formErrorMessage = (errors: FieldErrors<ICreatureData>) => {
         if(errors.actions?.length) return 'Поля действий не заполнены!'
