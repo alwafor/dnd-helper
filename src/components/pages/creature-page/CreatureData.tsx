@@ -1,7 +1,13 @@
 import React from 'react';
 import styles from './CreatureData.module.scss'
 import {ICreatureData, INameValue} from '../../../types/creatureTypes';
-import {formHeadDescStr, formSpeedStr, formVisionStr, statToModifier} from '../../../utils/creatureCalculation';
+import {
+    formHeadDescStr,
+    formSaveThrowStr,
+    formSpeedStr,
+    formVisionStr, isThereSaveThrows,
+    statToModifier
+} from '../../../utils/creatureCalculation';
 import {addPlusToPositive} from '../../../utils/stringUtils';
 import {difficultyToXp, percToPassivePerc} from '../../../utils/convertations';
 
@@ -36,6 +42,8 @@ export const CreatureData: React.FC<IProps> = ({creatureData}) => {
         <Stat name={'ХАР'} stat={creatureData.charisma}/>
 
         <hr/>
+
+        {isThereSaveThrows(creatureData) && <div><span className={styles.bold}>Спасброски</span> {formSaveThrowStr(creatureData)}</div>}
 
         {creatureData.parameters.map(param => <div><span
             className={styles.highlight}>{param.name}:</span> {param.value}</div>)}
