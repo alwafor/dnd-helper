@@ -20,7 +20,8 @@ export const BestiaryPage: React.FC = () => {
             <div className={styles.title}>Бестиарий</div>
         </div>
         <div className={styles.creaturesWrapper}>
-            {allCreatures.map(creature => <CreatureCard onClick={handleCreatureCardClick} key={creature.name} creatureData={creature}/>)}
+            {allCreatures.map(creature => <CreatureCard onClick={handleCreatureCardClick} key={creature.name}
+                                                        creatureData={creature}/>)}
         </div>
     </div>
 };
