@@ -1,3 +1,7 @@
 .creaturePage {
   @apply ml-24 grow;
+
+  @media print {
+    @apply ml-0;
+  }
 }

@@ -1,6 +1,10 @@
 .root {
   @apply relative basis-[200px] shrink-0 select-none mr-8;
 
+  @media print {
+    display: none;
+  }
+
   .appTitle {
     @apply absolute font-freestyle text-[60px] sm:text-[90px] h-[125px] mb-[30px] whitespace-nowrap;
   }
