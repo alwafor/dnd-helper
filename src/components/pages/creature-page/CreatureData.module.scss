@@ -9,8 +9,18 @@
   }
 
 
-  .title {
+  .titleBlock {
     @apply text-red text-[22px];
+  }
+
+  @media print {
+    .btnEdit {
+      display: none;
+    }
+  }
+
+  .btnEdit {
+    @apply right-4 text-gray-500 text-[16px] pl-4;
   }
 
   .subtitle {

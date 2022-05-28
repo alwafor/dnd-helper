@@ -18,7 +18,12 @@ interface IProps {
 export const CreatureData: React.FC<IProps> = ({creatureData}) => {
 
     return <div className={styles.creatureData}>
-        <div className={styles.title}>{creatureData.name}</div>
+        <div className={styles.titleBlock}>
+            {creatureData.name}
+            <button className={styles.btnEdit}>(Редактировать)</button>
+        </div>
+
+
 
         <p className={'italic'}>{formHeadDescStr(creatureData)}</p>
         <p>Место обитания: {creatureData.habitat}</p>
