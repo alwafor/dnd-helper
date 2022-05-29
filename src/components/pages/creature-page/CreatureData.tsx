@@ -23,8 +23,6 @@ export const CreatureData: React.FC<IProps> = ({creatureData}) => {
             <button className={styles.btnEdit}>(Редактировать)</button>
         </div>
 
-
-
         <p className={'italic'}>{formHeadDescStr(creatureData)}</p>
         <p>Место обитания: {creatureData.habitat}</p>
 
