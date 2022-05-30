@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 import styles from './CreatureCard.module.scss'
-import {ICreatureData} from '../../../../types/creatureTypes';
-import {formHeadDescStr, getCreatureStats} from '../../../../utils/creatureCalculation';
+import {ICreatureData} from '../../../../types/creatureTypes'
+import {formHeadDescStr, getCreatureStats} from '../../../../utils/creatureCalculation'
 
 interface IProps {
     creatureData: ICreatureData
@@ -27,4 +27,4 @@ export const CreatureCard: React.FC<IProps> = ({creatureData, onClick}) => {
             </div>
         </div>
     </div>
-};
+}
