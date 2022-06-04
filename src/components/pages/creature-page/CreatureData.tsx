@@ -29,10 +29,16 @@ export const CreatureData: React.FC<IProps> = ({creatureData}) => {
         navigate(`/create-creature/${creatureData.name}`)
     }
 
+    const handleCreateNewBtnClick = () => {
+        dispatch(changeFormValues(creatureData))
+        navigate(`/create-creature`)
+    }
+
     return <div className={styles.creatureData}>
         <div className={styles.titleBlock}>
             {creatureData.name}
             <button className={styles.btnEdit} onClick={handleEditBtnClick}>(Редактировать)</button>
+            <button className={styles.btnEdit} onClick={handleCreateNewBtnClick}>(Создать на основе)</button>
         </div>
 
         <p className={'italic'}>{formHeadDescStr(creatureData)}</p>
