@@ -26,7 +26,7 @@ export const CreatureData: React.FC<IProps> = ({creatureData}) => {
 
     const handleEditBtnClick = () => {
         dispatch(changeFormValues(creatureData))
-        navigate('/create-creature')
+        navigate(`/create-creature/${creatureData.name}`)
     }
 
     return <div className={styles.creatureData}>
