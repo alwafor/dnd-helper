@@ -14,6 +14,10 @@ export const routes: IRoute[] = [
         component: <CreateCreaturePage/>
     },
     {
+        path: '/create-creature/:creatureName',
+        component: <CreateCreaturePage/>
+    },
+    {
         path: '/bestiary',
         component: <BestiaryPage/>
     },
