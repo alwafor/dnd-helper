@@ -7,7 +7,7 @@ import {Route, Routes} from 'react-router-dom'
 function App() {
     return (
         <div className={styles.wrapper}>
-            <div className={'flex'}>
+            <div className={'flex flex-col md:flex-row'}>
                 <Sidebar/>
                 <Routes>
                     {routes.map(route => <Route key={route.path} element={route.component} path={route.path}/>)}
