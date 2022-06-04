@@ -5,6 +5,9 @@ import imgEye from '../../../assets/images/icons/creature-icon-1.svg'
 import imgWolf from '../../../assets/images/icons/creature-icon-2.svg'
 
 import {useNavigate} from 'react-router-dom';
+import {useAppDispatch} from '../../../hooks/redux'
+import {changeFormValues} from '../../../redux/reducers/createCreatureReducer'
+import {createCreatureDefaultValues} from '../../../contants/hookFormConstants'
 
 interface IProps {
 
@@ -12,6 +15,7 @@ interface IProps {
 
 export const Sidebar: React.FC<IProps> = () => {
 
+    const dispatch = useAppDispatch()
     const navigate = useNavigate()
 
     const navigateTo = (path: string) => () => navigate(path)
@@ -23,7 +27,10 @@ export const Sidebar: React.FC<IProps> = () => {
                 {
                     icon: imgEye,
                     name: 'Создать существо',
-                    onClick: navigateTo('create-creature'),
+                    onClick: () => {
+                        dispatch(changeFormValues(createCreatureDefaultValues))
+                        navigate('create-creature')
+                    },
                     isActive: window.location.pathname === '/create-creature'
                 },
                 {
