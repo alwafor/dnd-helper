@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './CreaturePage.module.scss'
+import {CreatureData} from '../../components/pages/creature-page/CreatureData';
 import {useAppSelector} from '../../hooks/redux';
 import {useParams} from 'react-router-dom';
 
@@ -14,6 +15,6 @@ export const CreaturePage: React.FC<IProps> = () => {
     if(!creature) return <div className={'ml-24'}>Такого существа нет!</div>
 
     return <div className={styles.creaturePage}>
-
+        <CreatureData creatureData={creature} />
     </div>
 };
