@@ -1,5 +1,5 @@
 .creatureCard {
-  @apply relative leading-[16px] basis-[19%] select-none;
+  @apply relative leading-[16px] basis-[100%] sm:basis-[45%] md:basis-[19%] flex flex-col select-none min-w-[232px];
 
   .head, .body {
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -23,7 +23,7 @@
   }
 
   .body {
-    @apply relative left-[17%] bg-milk rounded-b-xl w-[83%] p-[2%];
+    @apply relative ml-[17%] bg-milk rounded-b-xl basis-[83%] p-[2%];
     .inlineStat {
       span {
         @apply text-red;
