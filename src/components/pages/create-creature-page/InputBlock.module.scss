@@ -1,5 +1,5 @@
 .inputBlock {
-  @apply relative sm:basis-[100%] md:basis-[50%] lg:basis-[30%];
+  @apply relative basis-[100%] md:basis-[50%] lg:basis-[30%];
 
   .title {
     @apply absolute text-center text-[24px] whitespace-nowrap left-1/2;
