@@ -1,15 +1,19 @@
-import React from 'react';
+import React from 'react'
 import styles from './CreatureData.module.scss'
-import {ICreatureData, INameValue} from '../../../types/creatureTypes';
+import {ICreatureData, INameValue} from '../../../types/creatureTypes'
 import {
     formHeadDescStr,
     formSaveThrowStr,
     formSpeedStr,
-    formVisionStr, isThereSaveThrows,
+    formVisionStr,
+    isThereSaveThrows,
     statToModifier
-} from '../../../utils/creatureCalculation';
-import {addPlusToPositive} from '../../../utils/stringUtils';
-import {difficultyToXp, percToPassivePerc} from '../../../utils/convertations';
+} from '../../../utils/creatureCalculation'
+import {addPlusToPositive} from '../../../utils/stringUtils'
+import {difficultyToXp, percToPassivePerc} from '../../../utils/convertations'
+import {useNavigate} from 'react-router-dom'
+import {useAppDispatch} from '../../../hooks/redux'
+import {changeFormValues} from '../../../redux/reducers/createCreatureReducer'
 
 interface IProps {
     creatureData: ICreatureData
@@ -17,10 +21,18 @@ interface IProps {
 
 export const CreatureData: React.FC<IProps> = ({creatureData}) => {
 
+    const dispatch = useAppDispatch()
+    const navigate = useNavigate()
+
+    const handleEditBtnClick = () => {
+        dispatch(changeFormValues(creatureData))
+        navigate('/create-creature')
+    }
+
     return <div className={styles.creatureData}>
         <div className={styles.titleBlock}>
             {creatureData.name}
-            <button className={styles.btnEdit}>(Редактировать)</button>
+            <button className={styles.btnEdit} onClick={handleEditBtnClick}>(Редактировать)</button>
         </div>
 
         <p className={'italic'}>{formHeadDescStr(creatureData)}</p>

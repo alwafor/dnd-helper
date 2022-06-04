@@ -16,3 +16,4 @@ export const createCreatureSlice = createSlice({
     }
 })
 
+export const {changeFormValues} = createCreatureSlice.actions
