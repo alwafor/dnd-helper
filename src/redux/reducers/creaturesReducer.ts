@@ -1,8 +1,9 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {ICreatureData} from '../../types/creatureTypes';
+import {LocalStorage} from '../../utils/localStorage'
 
 const initialState = {
-    creatures: [] as ICreatureData[]
+    creatures: LocalStorage.getCreatures()
 }
 
 export const creaturesSlice = createSlice({
@@ -11,6 +12,7 @@ export const creaturesSlice = createSlice({
     reducers: {
         addCreature(state, action: PayloadAction<ICreatureData>) {
             state.creatures.push(action.payload)
+            LocalStorage.addCreature(action.payload)
         }
     }
 })
