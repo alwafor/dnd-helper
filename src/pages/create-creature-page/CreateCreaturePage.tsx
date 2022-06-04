@@ -1,27 +1,28 @@
-import React, {useEffect} from 'react';
+import React from 'react'
 import styles from './CreateCreaturePage.module.scss'
-import {FieldErrors, useFieldArray, useForm} from 'react-hook-form';
-import {ICreatureData} from '../../types/creatureTypes';
-import {StatsInputBlock} from '../../components/pages/create-creature-page/StatsInputBlock';
-import {NameInputBlock} from '../../components/pages/create-creature-page/NameInputBlock';
-import {HeadInputBlock} from '../../components/pages/create-creature-page/HeadInputBlock';
-import {SaveThrowsInputBlock} from '../../components/pages/create-creature-page/SaveThrowsInputBlock';
-import {QuantitativeInputBlock} from '../../components/pages/create-creature-page/QuantitativeInputBlock';
-import {SpeedInputBlock} from '../../components/pages/create-creature-page/SpeedInputBlock';
-import {VisionInputBlock} from '../../components/pages/create-creature-page/VisionInputBlock';
-import {SkillsInputBlock} from '../../components/pages/create-creature-page/SkillsInputBlock';
-import {DescriptionInputBlock} from '../../components/pages/create-creature-page/DescriptionInputBlock';
-import {DynamicNameValueInputBlock} from '../../components/pages/create-creature-page/DynamicNameValueInputBlock';
-import {Textarea} from '../../components/reusable/textareas/Textarea';
-import {Input} from '../../components/reusable/inputs/Input';
-import {Button} from '../../components/reusable/buttons/Button';
-import {useAppDispatch, useAppSelector} from '../../hooks/redux';
-import {creaturesSlice} from '../../redux/reducers/creaturesReducer';
-import {useNavigate} from 'react-router-dom'
+import {FieldErrors, useFieldArray, useForm} from 'react-hook-form'
+import {ICreatureData} from '../../types/creatureTypes'
+import {StatsInputBlock} from '../../components/pages/create-creature-page/StatsInputBlock'
+import {NameInputBlock} from '../../components/pages/create-creature-page/NameInputBlock'
+import {HeadInputBlock} from '../../components/pages/create-creature-page/HeadInputBlock'
+import {SaveThrowsInputBlock} from '../../components/pages/create-creature-page/SaveThrowsInputBlock'
+import {QuantitativeInputBlock} from '../../components/pages/create-creature-page/QuantitativeInputBlock'
+import {SpeedInputBlock} from '../../components/pages/create-creature-page/SpeedInputBlock'
+import {VisionInputBlock} from '../../components/pages/create-creature-page/VisionInputBlock'
+import {SkillsInputBlock} from '../../components/pages/create-creature-page/SkillsInputBlock'
+import {DescriptionInputBlock} from '../../components/pages/create-creature-page/DescriptionInputBlock'
+import {DynamicNameValueInputBlock} from '../../components/pages/create-creature-page/DynamicNameValueInputBlock'
+import {Textarea} from '../../components/reusable/textareas/Textarea'
+import {Input} from '../../components/reusable/inputs/Input'
+import {Button} from '../../components/reusable/buttons/Button'
+import {useAppDispatch, useAppSelector} from '../../hooks/redux'
+import {addCreature, modifyCreature} from '../../redux/reducers/creaturesReducer'
+import {useNavigate, useParams} from 'react-router-dom'
 
 export const CreateCreaturePage: React.FC = () => {
 
     const formValues = useAppSelector(state => state.createCreature.formValues)
+    const {creatureName} = useParams()
     const dispatch = useAppDispatch()
     const navigate = useNavigate()
 
@@ -78,23 +79,29 @@ export const CreateCreaturePage: React.FC = () => {
     }
     const watchProficiencyBonus = watch('proficiencyBonus')
 
-    useEffect(() => {
-        console.log(watchImageUrl)
-    }, [watchImageUrl])
+    const isRedo = !!creatureName
 
     const onSubmit = (data: ICreatureData) => {
-        dispatch(creaturesSlice.actions.addCreature(data))
+
+        if (!isRedo)
+            dispatch(addCreature(data))
+        else
+            dispatch(modifyCreature({
+                creatureData: data,
+                oldName: creatureName
+            }))
+
         navigate(`/creature/${data.name}`)
     }
 
     const formErrorMessage = (errors: FieldErrors<ICreatureData>) => {
-        if(errors.actions?.length) return 'Поля действий не заполнены!'
-        if(errors.parameters?.length) return 'Поля действий не заполнены!'
+        if (errors.actions?.length) return 'Поля действий не заполнены!'
+        if (errors.parameters?.length) return 'Поля действий не заполнены!'
 
-        if(errors.name?.type === 'required') return 'Имя не заполнено!'
-        if(errors.type?.type === 'required') return 'Тип не выбран!'
-        if(errors.worldview?.type === 'required') return 'Мировоззрение не выбрано!'
-        if(errors.size?.type === 'required') return 'Размер не выбран!'
+        if (errors.name?.type === 'required') return 'Имя не заполнено!'
+        if (errors.type?.type === 'required') return 'Тип не выбран!'
+        if (errors.worldview?.type === 'required') return 'Мировоззрение не выбрано!'
+        if (errors.size?.type === 'required') return 'Размер не выбран!'
     }
 
     return <form className={styles.root} onSubmit={handleSubmit(onSubmit)}>
@@ -124,17 +131,20 @@ export const CreateCreaturePage: React.FC = () => {
                                         valueFieldName={'Значение'} isRemoveButtonOnTop={true}
             />
             <DynamicNameValueInputBlock fields={fieldsLegendaryActions} append={appendLegendaryAction} control={control}
-                                        remove={removeLegendaryAction} ValueComponent={Textarea} dynamicFormName={'legendaryActions'}
+                                        remove={removeLegendaryAction} ValueComponent={Textarea}
+                                        dynamicFormName={'legendaryActions'}
                                         title={'Легендарный действия'} nameFieldName={'Название'}
                                         valueFieldName={'Значение'} isRemoveButtonOnTop={true}
             />
             <DynamicNameValueInputBlock fields={fieldsLairActions} append={appendLairAction} control={control}
-                                        remove={removeLairAction} ValueComponent={Textarea} dynamicFormName={'lairActions'}
+                                        remove={removeLairAction} ValueComponent={Textarea}
+                                        dynamicFormName={'lairActions'}
                                         title={'Действия Логова'} nameFieldName={'Название'}
                                         valueFieldName={'Значение'} isRemoveButtonOnTop={true}
             />
             <DynamicNameValueInputBlock fields={fieldsRegionalEffects} append={appendRegionalEffect} control={control}
-                                        remove={removeRegionalEffect} ValueComponent={Textarea} dynamicFormName={'regionalEffects'}
+                                        remove={removeRegionalEffect} ValueComponent={Textarea}
+                                        dynamicFormName={'regionalEffects'}
                                         title={'Эффекты местности'} nameFieldName={'Название'}
                                         valueFieldName={'Значение'} isRemoveButtonOnTop={true}
             />
@@ -142,6 +152,6 @@ export const CreateCreaturePage: React.FC = () => {
             <DescriptionInputBlock control={control}/>
         </div>
         <div className={styles.error}>{formErrorMessage(errors)}</div>
-        <Button className={styles.btnSubmit}>Завершить создание</Button>
+        <Button className={styles.btnSubmit}>{!isRedo ? 'Завершить создание' : 'Завершить редактирование'}</Button>
     </form>
-};
+}
