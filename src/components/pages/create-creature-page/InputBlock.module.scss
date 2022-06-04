@@ -1,5 +1,5 @@
 .inputBlock {
-  @apply relative basis-[30%];
+  @apply relative sm:basis-[100%] md:basis-[50%] lg:basis-[30%];
 
   .title {
     @apply absolute text-center text-[24px] whitespace-nowrap left-1/2;
@@ -20,7 +20,7 @@
   .inputBlockInputs.block6 > * {
     @apply basis-[30%];
     &:not(:nth-child(3n+1)) {
-      @apply ml-[5%]
+      @apply ml-[2.5%]
     }
   }
 
