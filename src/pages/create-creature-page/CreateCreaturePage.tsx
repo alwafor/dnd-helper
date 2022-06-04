@@ -17,11 +17,13 @@ import {Input} from '../../components/reusable/inputs/Input';
 import {Button} from '../../components/reusable/buttons/Button';
 import {useAppDispatch, useAppSelector} from '../../hooks/redux';
 import {creaturesSlice} from '../../redux/reducers/creaturesReducer';
+import {useNavigate} from 'react-router-dom'
 
 export const CreateCreaturePage: React.FC = () => {
 
     const formValues = useAppSelector(state => state.createCreature.formValues)
     const dispatch = useAppDispatch()
+    const navigate = useNavigate()
 
     const {handleSubmit, control, watch, formState: {errors}} = useForm<ICreatureData>({
         defaultValues: formValues
@@ -82,6 +84,7 @@ export const CreateCreaturePage: React.FC = () => {
 
     const onSubmit = (data: ICreatureData) => {
         dispatch(creaturesSlice.actions.addCreature(data))
+        navigate(`/creature/${data.name}`)
     }
 
     const formErrorMessage = (errors: FieldErrors<ICreatureData>) => {
