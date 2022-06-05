@@ -4,7 +4,7 @@
 
 }
 
-.root .active {
+.root.active {
   @apply bg-cold hover:bg-cold-dark;
 }
 
