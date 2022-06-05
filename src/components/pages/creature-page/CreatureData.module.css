@@ -4,7 +4,7 @@
 }
 
 .creatureData .imgHolder {
-  @apply relative w-[250px] h-[250px] float-right top-[0px] bg-milk;
+  @apply relative w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] md:w-[250px] md:h-[250px] float-right top-[0px] bg-milk;
 }
 
 .creatureImg {
