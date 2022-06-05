@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './CreaturePage.module.scss'
+import styles from './CreaturePage.module.css'
 import {CreatureData} from '../../components/pages/creature-page/CreatureData';
 import {useAppSelector} from '../../hooks/redux';
 import {useParams} from 'react-router-dom';

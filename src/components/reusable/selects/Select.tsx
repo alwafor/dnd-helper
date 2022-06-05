@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Select.module.scss'
+import styles from './Select.module.css'
 
 interface IProps extends  React.DetailedHTMLProps<React.SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>{
 

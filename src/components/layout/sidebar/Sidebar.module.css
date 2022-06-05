@@ -1,0 +1,17 @@
+.root {
+  @apply relative basis-[200px] shrink-0 select-none md:mr-8;
+}
+
+@media print {
+  .root {
+    display: none;
+  }
+}
+
+.appTitle {
+  @apply absolute z-[-1] w-full font-freestyle text-center text-[75px] md:text-[90px] md:text-left h-[125px] mb-[30px] whitespace-nowrap;
+}
+
+.menu {
+  @apply mt-[90px] md:mt-[200px] mx-auto;
+}

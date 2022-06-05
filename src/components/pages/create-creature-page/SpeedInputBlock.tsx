@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './InputBlock.module.scss'
+import styles from './InputBlock.module.css'
 import {NameSupplier} from '../../reusable/name-supplier/NameSupplier';
 import {Control, Controller} from 'react-hook-form';
 import {Input} from '../../reusable/inputs/Input';

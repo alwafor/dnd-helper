@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './BestiaryPage.module.scss'
+import styles from './BestiaryPage.module.css'
 import imgWolf from './../../assets/images/big/wolf.png'
 import {CreatureCard} from '../../components/pages/bestiary-page/creature-card/CreatureCard';
 import {useAppSelector} from '../../hooks/redux';

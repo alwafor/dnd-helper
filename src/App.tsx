@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './App.module.scss';
+import styles from './App.module.css';
 import {Sidebar} from './components/layout/sidebar/Sidebar';
 import {routes} from './contants/routes';
 import {Route, Routes} from 'react-router-dom'

@@ -1,0 +1,7 @@
+.row > * {
+  @apply basis-1/2;
+}
+
+.row > *:nth-child(1) {
+  @apply mr-[5%];
+}

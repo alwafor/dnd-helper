@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Sidebar.module.scss'
+import styles from './Sidebar.module.css'
 import {ISubmenuProps, Submenu} from '../../reusable/submenu/Submenu';
 import imgEye from '../../../assets/images/icons/creature-icon-1.svg'
 import imgWolf from '../../../assets/images/icons/creature-icon-2.svg'

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Submenu.module.scss'
+import styles from './Submenu.module.css'
 import {ISubmenuItems} from '../../../types/submenuTypes';
 
 export const SubmenuItem: React.FC<ISubmenuItems> = ({name, icon, onClick, isActive}) => {

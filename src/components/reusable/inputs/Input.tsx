@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Input.module.scss'
+import styles from './Input.module.css'
 
 interface IProps extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>{
     asideValue?: string | number

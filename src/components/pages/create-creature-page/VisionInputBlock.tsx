@@ -1,6 +1,6 @@
 import React from 'react';
 import {Control, Controller} from 'react-hook-form';
-import styles from './InputBlock.module.scss';
+import styles from './InputBlock.module.css';
 import {speedData, visionData} from '../../../contants/creatureContants';
 import {NameSupplier} from '../../reusable/name-supplier/NameSupplier';
 import {Input} from '../../reusable/inputs/Input';

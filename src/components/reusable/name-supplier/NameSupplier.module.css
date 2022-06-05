@@ -1,0 +1,11 @@
+.nameSupplier {
+  @apply relative w-full;
+}
+
+.name + * {
+  @apply mt-7
+}
+
+.name {
+  @apply text-[18px] whitespace-nowrap absolute pl-2.5 top-0 left-0;
+}

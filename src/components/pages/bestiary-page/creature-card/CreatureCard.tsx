@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './CreatureCard.module.scss'
+import styles from './CreatureCard.module.css'
 import {ICreatureData} from '../../../../types/creatureTypes'
 import {formHeadDescStr, getCreatureStats} from '../../../../utils/creatureCalculation'
 

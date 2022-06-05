@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import styles from './Submenu.module.scss'
+import styles from './Submenu.module.css'
 import {ISubmenuItems} from '../../../types/submenuTypes';
 import {SubmenuItem} from './SubmenuItem';
 import imgTriangle from '../../../assets/images/icons/triangle-icon-1.png'

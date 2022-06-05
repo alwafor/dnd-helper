@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import styles from './CreateCreaturePage.module.scss'
+import styles from './CreateCreaturePage.module.css'
 import {FieldErrors, useFieldArray, useForm} from 'react-hook-form'
 import {ICreatureData} from '../../types/creatureTypes'
 import {StatsInputBlock} from '../../components/pages/create-creature-page/StatsInputBlock'

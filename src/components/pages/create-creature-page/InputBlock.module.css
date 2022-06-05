@@ -1,0 +1,85 @@
+.inputBlock {
+  @apply relative basis-full;
+}
+
+.inputBlock .title {
+  @apply absolute text-center text-[24px] whitespace-nowrap left-1/2;
+
+  transform: translateX(-50%);
+}
+
+.inputBlockInputs {
+  @apply flex flex-wrap gap-y-2.5 pt-9;
+}
+
+.inputBlockInputs.block4 > * {
+  @apply basis-[45%];
+}
+
+.inputBlockInputs.block4 > *:nth-child(2n) {
+  @apply ml-[5%]
+}
+
+.inputBlockInputs.block6 > * {
+  @apply basis-[30%];
+}
+
+.inputBlockInputs.block6 > *:not(:nth-child(3n + 1)) {
+  @apply ml-[2.5%];
+}
+
+.inputBlockInputs.withoutNames > * {
+  @apply mt-7;
+}
+
+.inputBlockInputs.rowflow {
+  @apply gap-x-5;
+}
+
+.inputBlockInputs.rowflow > * {
+  @apply w-auto pr-7;
+}
+
+@media (min-width: 768px) {
+  .inputBlock {
+    @apply basis-[50%];
+  }
+}
+
+@media (min-width: 1024px) {
+  .inputBlock {
+    @apply basis-[30%];
+  }
+}
+
+.fullSectionItem {
+  @apply flex;
+}
+
+.fullSectionItem > *:nth-child(1) {
+  @apply basis-[50%];;
+}
+
+.fullSectionItem > *:nth-child(2) {
+  @apply grow mx-4;
+}
+
+.fullSectionItem + .fullSectionItem {
+  @apply mt-4;
+}
+
+.btnAdd {
+  @apply block mt-4 text-xl mx-auto;
+}
+
+.btnRemove {
+  @apply self-end text-[28px] px-4 py-0 leading-10;
+}
+
+.btnRemove._top {
+  @apply self-start mt-7;
+}
+
+.inputBlock.full {
+  @apply basis-full;
+}

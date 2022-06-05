@@ -1,0 +1,23 @@
+.root {
+  @apply relative font-cuprum rounded-full bg-milk text-black-075 pl-5 py-[6px];
+}
+
+.root .input::-webkit-outer-spin-button,
+.root .input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.root .input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.root .input {
+  @apply bg-transparent outline-none min-w-0 w-full;
+}
+
+.root .asideValue {
+  @apply absolute right-[6px] top-[6px] bg-milk z-10;
+}
+
+

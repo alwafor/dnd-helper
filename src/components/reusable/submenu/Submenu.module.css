@@ -1,7 +1,7 @@
 .root {
   @apply text-[22px];
 }
-/////////
+
 .head {
   @apply w-full py-2.5 px-2 flex items-center cursor-pointer hover:text-cold-dark;
 }
@@ -12,23 +12,19 @@
 
 .headImage {
   @apply w-[24px] h-[21px] transition-all duration-500;
-  &.reversed {
-    @apply rotate-180;
-  }
 }
-/////////
+
+.headImage.reversed {
+  @apply rotate-180;
+}
+
 .submenuItem {
   @apply flex items-center text-[16px] w-full flex py-2.5 px-2 hover:bg-putty;
-
-  &.active {
-    @apply text-cold-dark;
-
-  }
-
-
 }
 
-
+.submenuItem.active {
+  @apply text-cold-dark;
+}
 
 .submenuImage {
   @apply pr-2 cursor-pointer;

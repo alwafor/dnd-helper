@@ -1,0 +1,23 @@
+.root {
+  @apply grow;
+}
+
+.nameSupplier {
+  @apply relative w-full;
+}
+
+.name {
+  @apply absolute pl-2.5 top-0 left-0 mt-6;
+}
+
+.inputBlocksWrapper {
+  @apply flex flex-wrap mt-6 justify-between gap-y-7;
+}
+
+.error {
+  @apply text-center text-cold-dark;
+}
+
+.btnSubmit {
+  @apply block mx-auto hover:bg-cold;
+}

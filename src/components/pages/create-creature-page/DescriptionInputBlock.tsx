@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './InputBlock.module.scss';
+import styles from './InputBlock.module.css';
 import {Control, Controller} from 'react-hook-form';
 import {ICreatureData} from '../../../types/creatureTypes';
 import {Textarea} from '../../reusable/textareas/Textarea';

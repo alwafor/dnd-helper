@@ -1,0 +1,58 @@
+
+.creatureData {
+  @apply relative w-full bg-milk p-2 mt-4;
+}
+
+.creatureData .imgHolder {
+  @apply relative w-[250px] h-[250px] float-right top-[0px] bg-milk;
+}
+
+.creatureImg {
+  @apply drop-shadow-2xl absolute w-full h-full object-cover border-4 border-red right-0 left-0 top-0 bottom-0 rounded-full;
+}
+
+@media print {
+  .btn {
+    display: none;
+  }
+}
+
+.creatureData div + div {
+  margin-top: 0.5rem;
+}
+
+.titleBlock {
+  @apply text-red text-[22px];
+}
+
+.btn {
+  @apply right-4 text-gray-500 text-[16px] pl-4;
+}
+
+.btnRed {
+  @apply text-red;
+}
+
+.subtitle {
+  @apply text-red text-[20px] mt-2 indent-2;
+}
+
+hr {
+  @apply border-0 my-[7.5px] bg-red h-[1px];
+}
+
+span.red {
+  @apply text-red font-bold;
+}
+
+span.highlight {
+  @apply font-bold italic;
+}
+
+span.gray {
+  @apply text-gray-500;
+}
+
+span.mr {
+  @apply mr-2;
+}

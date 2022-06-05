@@ -1,0 +1,18 @@
+.root {
+
+  @apply relative w-full font-cuprum rounded-full bg-milk text-black-075 pl-5 py-[6px] hover:bg-milk-warm cursor-pointer select-none;
+
+}
+
+.root .active {
+  @apply bg-cold hover:bg-cold-dark;
+}
+
+.root .asideValue {
+  @apply absolute right-[6px] top-[6px] ;
+}
+
+.root .hiddenInput {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Button.module.scss'
+import styles from './Button.module.css'
 interface IProps extends  React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>{
 
 }

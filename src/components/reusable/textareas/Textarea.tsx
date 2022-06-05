@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Textarea.module.scss'
+import styles from './Textarea.module.css'
 
 interface IProps extends React.DetailedHTMLProps<React.TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement> {
 

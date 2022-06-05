@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './NameSupplier.module.scss'
+import styles from './NameSupplier.module.css'
 
 interface IProps {
     name: string

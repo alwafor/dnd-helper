@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react'
-import styles from './CreatureData.module.scss'
+import styles from './CreatureData.module.css'
 import {ICreatureData, INameValue} from '../../../types/creatureTypes'
 import {
     formHeadDescStr,
