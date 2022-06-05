@@ -14,13 +14,17 @@
   }
 
   @media print {
-    .btnEdit {
+    .btn {
       display: none;
     }
   }
 
-  .btnEdit {
+  .btn {
     @apply right-4 text-gray-500 text-[16px] pl-4;
+  }
+
+  .btnRed {
+    @apply text-red;
   }
 
   .subtitle {

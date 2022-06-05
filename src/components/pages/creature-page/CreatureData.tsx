@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import styles from './CreatureData.module.scss'
 import {ICreatureData, INameValue} from '../../../types/creatureTypes'
 import {
@@ -14,12 +14,15 @@ import {difficultyToXp, percToPassivePerc} from '../../../utils/convertations'
 import {useNavigate} from 'react-router-dom'
 import {useAppDispatch} from '../../../hooks/redux'
 import {changeFormValues} from '../../../redux/reducers/createCreatureReducer'
+import {removeCreature} from '../../../redux/reducers/creaturesReducer'
 
 interface IProps {
     creatureData: ICreatureData
 }
 
 export const CreatureData: React.FC<IProps> = ({creatureData}) => {
+
+    const [deleteBtnCount, setDeleteBtnCount] = useState(0)
 
     const dispatch = useAppDispatch()
     const navigate = useNavigate()
@@ -34,11 +37,30 @@ export const CreatureData: React.FC<IProps> = ({creatureData}) => {
         navigate(`/create-creature`)
     }
 
+    const timeout = useRef<NodeJS.Timeout | null>(null)
+
+    useEffect(() => {
+        if(deleteBtnCount > 3) {
+            dispatch(removeCreature(creatureData))
+            navigate('/bestiary')
+        }
+
+        if(timeout.current) clearTimeout(timeout.current)
+
+        timeout.current = setTimeout(() => {
+            setDeleteBtnCount(0)
+        }, 3000)
+
+        return () => clearTimeout(timeout.current as NodeJS.Timeout)
+
+    }, [deleteBtnCount])
+
     return <div className={styles.creatureData}>
         <div className={styles.titleBlock}>
             {creatureData.name}
-            <button className={styles.btnEdit} onClick={handleEditBtnClick}>(Редактировать)</button>
-            <button className={styles.btnEdit} onClick={handleCreateNewBtnClick}>(Создать на основе)</button>
+            <button className={styles.btn} onClick={handleEditBtnClick}>(Редактировать)</button>
+            <button className={styles.btn} onClick={handleCreateNewBtnClick}>(Создать на основе)</button>
+            <button className={styles.btn + (deleteBtnCount ? ' ' + styles.btnRed : '')} onClick={() => setDeleteBtnCount(prev => ++prev)}>{`(Удалить${deleteBtnCount ? ' ' + '?'.repeat(deleteBtnCount) : ''})`}</button>
         </div>
 
         <p className={'italic'}>{formHeadDescStr(creatureData)}</p>
@@ -64,7 +86,8 @@ export const CreatureData: React.FC<IProps> = ({creatureData}) => {
 
         <hr/>
 
-        {isThereSaveThrows(creatureData) && <div><span className={styles.bold}>Спасброски</span> {formSaveThrowStr(creatureData)}</div>}
+        {isThereSaveThrows(creatureData) &&
+            <div><span className={styles.bold}>Спасброски</span> {formSaveThrowStr(creatureData)}</div>}
 
         {creatureData.parameters.map(param => <div><span
             className={styles.highlight}>{param.name}:</span> {param.value}</div>)}
@@ -107,7 +130,7 @@ export const CreatureData: React.FC<IProps> = ({creatureData}) => {
             <div>{creatureData.description}</div>
         </>}
     </div>
-};
+}
 
 const Stat: React.FC<{ stat: string, name: string }> = ({name, stat}) => {
     return <>
