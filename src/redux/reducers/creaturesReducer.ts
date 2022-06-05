@@ -1,6 +1,12 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {ICreatureData} from '../../types/creatureTypes';
 import {LocalStorage} from '../../utils/localStorage'
+import {creatureExampleDragon} from '../../utils/creaturesExamples'
+
+if(!localStorage.getItem('visited')) {
+    localStorage.setItem('visited', 'true')
+    LocalStorage.addCreature(creatureExampleDragon)
+}
 
 const initialState = {
     creatures: LocalStorage.getCreatures()
