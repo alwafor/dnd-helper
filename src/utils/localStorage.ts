@@ -24,6 +24,12 @@ export class LocalStorage {
         localStorage.setItem('creatures', JSON.stringify(creatures))
     }
 
+    static removeCreature(creatureName: string) {
+        let creatures = LocalStorage.getCreatures()
+        creatures = creatures.filter(creature => creature.name !== creatureName)
+        localStorage.setItem('creatures', JSON.stringify(creatures))
+    }
+
     private static clearStorage() {
         localStorage.clear()
     }
