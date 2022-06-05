@@ -64,7 +64,7 @@ export const CreatureData: React.FC<IProps> = ({creatureData}) => {
         </div>
 
         <p className={'italic'}>{formHeadDescStr(creatureData)}</p>
-        <p>Место обитания: {creatureData.habitat}</p>
+        {!!creatureData.habitat && <p>Место обитания: {creatureData.habitat}</p>}
 
         <hr/>
         <div className={styles.imgHolder}>
