@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/dnd-helper/static/css/main.1bd3a21e.css",
-    "main.js": "/dnd-helper/static/js/main.9215d3f3.js",
+    "main.css": "/dnd-helper/static/css/main.b3799f9e.css",
+    "main.js": "/dnd-helper/static/js/main.dec6aee8.js",
     "static/media/bookmanoldstyle_italic.ttf": "/dnd-helper/static/media/bookmanoldstyle_italic.4977fa8ff10aa3aef4da.ttf",
     "static/media/Cuprum-Italic.ttf": "/dnd-helper/static/media/Cuprum-Italic.381cd7438e799b2befb4.ttf",
     "static/media/Cuprum.ttf": "/dnd-helper/static/media/Cuprum.690013a97e12bdb20ed3.ttf",
@@ -11,11 +11,11 @@
     "static/media/wolf.png": "/dnd-helper/static/media/wolf.984ef00ea3547169a547.png",
     "static/media/creature-icon-2.svg": "/dnd-helper/static/media/creature-icon-2.d21bf339effbe129c5a8a1c7e3ebe6a0.svg",
     "index.html": "/dnd-helper/index.html",
-    "main.1bd3a21e.css.map": "/dnd-helper/static/css/main.1bd3a21e.css.map",
-    "main.9215d3f3.js.map": "/dnd-helper/static/js/main.9215d3f3.js.map"
+    "main.b3799f9e.css.map": "/dnd-helper/static/css/main.b3799f9e.css.map",
+    "main.dec6aee8.js.map": "/dnd-helper/static/js/main.dec6aee8.js.map"
   },
   "entrypoints": [
-    "static/css/main.1bd3a21e.css",
-    "static/js/main.9215d3f3.js"
+    "static/css/main.b3799f9e.css",
+    "static/js/main.dec6aee8.js"
   ]
 }
