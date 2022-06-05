@@ -16,3 +16,5 @@ root.render(
         </Provider>
     </BrowserRouter>
 );
+
+document.title = 'DnD Helper'
