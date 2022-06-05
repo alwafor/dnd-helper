@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styles from './CreateCreaturePage.module.scss'
 import {FieldErrors, useFieldArray, useForm} from 'react-hook-form'
 import {ICreatureData} from '../../types/creatureTypes'
@@ -22,9 +22,12 @@ import {useNavigate, useParams} from 'react-router-dom'
 export const CreateCreaturePage: React.FC = () => {
 
     const formValues = useAppSelector(state => state.createCreature.formValues)
+    const allCreaturesNames = useAppSelector(state => state.creatures.creatures.map(creature => creature.name))
     const {creatureName} = useParams()
     const dispatch = useAppDispatch()
     const navigate = useNavigate()
+
+    const [customError, setCustomError] = useState('')
 
     const {handleSubmit, control, watch, formState: {errors}} = useForm<ICreatureData>({
         defaultValues: formValues
@@ -83,14 +86,19 @@ export const CreateCreaturePage: React.FC = () => {
 
     const onSubmit = (data: ICreatureData) => {
 
-        if (!isRedo)
+        if (!isRedo) {
+            if(allCreaturesNames.includes(data.name)) {
+                setCustomError('Существо с таким именем уже существует!')
+                return
+            }
             dispatch(addCreature(data))
-        else
+        }
+        else {
             dispatch(modifyCreature({
                 creatureData: data,
                 oldName: creatureName
             }))
-
+        }
         navigate(`/creature/${data.name}`)
     }
 
@@ -152,6 +160,7 @@ export const CreateCreaturePage: React.FC = () => {
             <DescriptionInputBlock control={control}/>
         </div>
         <div className={styles.error}>{formErrorMessage(errors)}</div>
+        <div className={styles.error}>{customError}</div>
         <Button className={styles.btnSubmit}>{!isRedo ? 'Завершить создание' : 'Завершить редактирование'}</Button>
     </form>
 }
