@@ -3,6 +3,7 @@ import styles from './Sidebar.module.css'
 import {ISubmenuProps, Submenu} from '../../reusable/submenu/Submenu';
 import imgEye from '../../../assets/images/icons/creature-icon-1.svg'
 import imgWolf from '../../../assets/images/icons/creature-icon-2.svg'
+import imgSave from '../../../assets/images/icons/diskette-icon.png'
 
 import {useNavigate} from 'react-router-dom';
 import {useAppDispatch} from '../../../hooks/redux'
@@ -38,6 +39,17 @@ export const Sidebar: React.FC<IProps> = () => {
                     name: 'Бестиарий',
                     onClick: navigateTo('bestiary'),
                     isActive: window.location.pathname === '/bestiary'
+                }
+            ]
+        },
+        {
+            name: 'Дополнительно',
+            items: [
+                {
+                    icon: imgSave,
+                    name: 'Сохранение',
+                    onClick: navigateTo('/save'),
+                    isActive: window.location.pathname === 'save'
                 }
             ]
         }
