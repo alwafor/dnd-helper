@@ -2,6 +2,7 @@ import React from 'react';
 import {CreateCreaturePage} from "../pages/create-creature-page/CreateCreaturePage";
 import {BestiaryPage} from '../pages/bestiary-page/BestiaryPage';
 import {CreaturePage} from '../pages/creature-page/CreaturePage';
+import {SavePage} from '../pages/save-page/SavePage'
 
 interface IRoute {
     path: string,
@@ -25,4 +26,8 @@ export const routes: IRoute[] = [
         path: '/creature/:name',
         component: <CreaturePage/>
     },
+    {
+        path: '/save',
+        component: <SavePage/>
+    }
 ]
