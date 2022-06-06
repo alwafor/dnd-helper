@@ -27,7 +27,7 @@
 }
 
 .submenuImage {
-  @apply pr-2 cursor-pointer;
+  @apply pr-2 cursor-pointer w-[36px] h-[26px];
 }
 
 .submenuName {
