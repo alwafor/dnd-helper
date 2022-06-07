@@ -1,0 +1,11 @@
+.head {
+  @apply w-full max-h-[200px] h-[200px];
+}
+
+.headImg {
+  @apply w-[128px] h-[128px] block mx-auto;
+}
+
+.title {
+  @apply text-center text-[36px];
+}
