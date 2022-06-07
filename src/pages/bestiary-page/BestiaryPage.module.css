@@ -1,7 +1,23 @@
 .bestiaryPage {
   @apply grow;
 }
-
 .creaturesWrapper {
   @apply flex flex-wrap gap-y-6 gap-x-[1%];
+}
+
+.sortWrapper {
+  @apply mb-[20px]
+}
+
+.sortInput {
+  text-indent: 20px;
+}
+.sortInputWrapper {
+  @apply relative;
+}
+.sortInputImg {
+  @apply absolute w-[18px] h-[18px] z-10 left-[13px] top-[11px];
+}
+.sortInput {
+
 }
