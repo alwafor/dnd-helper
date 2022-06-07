@@ -1,5 +1,6 @@
 .root {
   @apply relative font-cuprum rounded-full bg-milk text-black-075 pl-5 py-[6px];
+  border: 2px solid black;
 }
 
 .root .input::-webkit-outer-spin-button,

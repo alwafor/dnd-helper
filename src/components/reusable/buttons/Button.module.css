@@ -1,3 +1,4 @@
 .root {
   @apply relative font-cuprum rounded-sm bg-milk text-black-075 p-5 py-[6px] hover:bg-milk-warm cursor-pointer select-none;
+  border: 2px solid black;
 }

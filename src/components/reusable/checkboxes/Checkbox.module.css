@@ -1,7 +1,7 @@
 .root {
 
   @apply relative w-full font-cuprum rounded-full bg-milk text-black-075 pl-5 py-[6px] hover:bg-milk-warm cursor-pointer select-none;
-
+  border: 2px solid black;
 }
 
 .root.active {

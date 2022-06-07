@@ -10,7 +10,7 @@ module.exports = {
         'freestyle': ['Freestyle Script', 'serif']
       },
       colors: {
-        'milk': '#fff4d4',
+        'milk': '#ffffff',
         'milk-warm': '#ffe9a8',
         'golden': '#ffe38e',
         'naples': '#ffd862',

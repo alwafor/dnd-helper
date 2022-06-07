@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 body {
-    background-color: #ffd862;
+    /*background-color: #ffd862;*/
+    background: url("./assets/images/big/bg-texture.png");
     padding: 0 15px;
     font-family: 'Bookman Old Style';
 }

@@ -1,6 +1,7 @@
 
 .creatureData {
   @apply relative w-full bg-milk p-2 mt-4;
+  border: 2px solid black;
 }
 
 .creatureData .imgHolder {
