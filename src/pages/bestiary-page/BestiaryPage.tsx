@@ -16,7 +16,7 @@ export const BestiaryPage: React.FC = () => {
     }
 
     return <div className={styles.bestiaryPage}>
-        <PageHead img={imgWolf}/>
+        <PageHead img={imgWolf} title={'Бестиарий'}/>
         <div className={styles.creaturesWrapper}>
             {allCreatures.map(creature => <CreatureCard onClick={handleCreatureCardClick} key={creature.name}
                                                         creatureData={creature}/>)}
