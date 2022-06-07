@@ -11,11 +11,11 @@ interface IProps {
 }
 
 export const HeadInputBlock: React.FC<IProps> = ({control, watchImageUrl}) => {
-    return <div className="flex flex-col items-center">
-        <div className="relative w-[250px] h-[250px] mb-2.5">
-            <img className="absolute object-cover top-0 left-0 w-full h-full rounded-full border-black" src={watchImageUrl} alt="some image"/>
+    return <div className={styles.imageLoader}>
+        <div className={styles.imageWrapper}>
+            <img className={styles.image} src={watchImageUrl} alt="some image"/>
         </div>
-        <div className={styles.row + ' flex items-center mt-4 w-full'}>
+        <div className={styles.row}>
             <NameSupplier name={'Имя'}>
                 <Controller name={'name'} control={control} rules={{required: true}}
                             render={({field}) => <Input {...field}/>}/>
