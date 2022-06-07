@@ -1,3 +1,4 @@
 .root {
   @apply w-full relative h-auto font-cuprum selection:bg-cold rounded-md bg-milk text-black-075 pl-5 py-[6px] outline-none min-h-[60px];
+  border: 2px solid black;
 }
