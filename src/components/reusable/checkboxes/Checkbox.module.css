@@ -1,11 +1,11 @@
 .root {
 
-  @apply relative w-full font-cuprum rounded-full bg-milk text-black-075 pl-5 py-[6px] hover:bg-milk-warm cursor-pointer select-none;
+  @apply relative w-full font-cuprum rounded-full bg-milk text-black-075 pl-5 py-[6px] hover:bg-black hover:bg-gray-200 cursor-pointer select-none;
   border: 2px solid black;
 }
 
 .root.active {
-  @apply bg-cold hover:bg-cold-dark;
+  @apply bg-black text-white ;
 }
 
 .root .asideValue {
