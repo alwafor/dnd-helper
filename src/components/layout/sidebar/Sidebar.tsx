@@ -49,7 +49,7 @@ export const Sidebar: React.FC<IProps> = () => {
                     icon: imgSave,
                     name: 'Сохранение',
                     onClick: navigateTo('/save'),
-                    isActive: window.location.pathname === 'save'
+                    isActive: window.location.pathname === '/save'
                 }
             ]
         }
