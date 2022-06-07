@@ -5,9 +5,9 @@ interface IProps extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLI
     asideValue?: string | number
 }
 
-export const Input = React.forwardRef<HTMLInputElement, IProps>( ({asideValue, ...rest}, ref) => {
+export const Input = React.forwardRef<HTMLInputElement, IProps>( ({asideValue, className, ...rest}, ref) => {
     return <div className={styles.root}>
-        <input className={styles.input} ref={ref} {...rest}/>
+        <input className={styles.input + ' ' + className} ref={ref} {...rest}/>
         <div className={styles.asideValue}>{asideValue}</div>
     </div>
 });
