@@ -1,0 +1,4 @@
+.root {
+  @apply relative font-cuprum rounded-full bg-milk min-w-[50px] text-black-075 pl-5 outline-none w-full;
+  border: 2px solid black;
+}
