@@ -21,4 +21,14 @@
   @apply absolute right-[6px] top-[6px] bg-milk z-10;
 }
 
+.dropdown {
+  @apply absolute z-10 left-0 top-[100%] bg-black text-white w-full;
+}
 
+.dropdownItem {
+  @apply p-2 w-full block;
+}
+
+.dropdownItem.active {
+  @apply bg-cold;
+}
