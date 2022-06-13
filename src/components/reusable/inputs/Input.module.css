@@ -25,6 +25,10 @@
   @apply absolute z-10 left-0 top-[100%] bg-black text-white w-full;
 }
 
+.dropdownInputIcon {
+  @apply absolute right-[10px] w-[20px] h-[18px] top-[10px] select-none;
+}
+
 .dropdownItem {
   @apply p-2 w-full block;
 }
