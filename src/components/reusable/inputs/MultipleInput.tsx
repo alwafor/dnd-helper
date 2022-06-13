@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react'
 import styles from './Input.module.css'
 import classNames from 'classnames'
+import {removeSubstringFromStringWithComas} from '../../../utils/stringUtils'
 
 interface IProps extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
-    dropdownValues: string[],
-    setValue: Function,
+    dropdownValues: string[]
+    setValue: Function
 }
 
 export const MultipleInput = React.forwardRef<HTMLInputElement, IProps>(({
@@ -30,28 +31,18 @@ export const MultipleInput = React.forwardRef<HTMLInputElement, IProps>(({
             setIsDropdownOpen(true)
     }
 
-    const handleDropdownItemClick = (e: React.MouseEvent<HTMLButtonElement>, value: string) => {
+    const handleDropdownItemClick = (e: React.MouseEvent<HTMLButtonElement>, dropdownValue: string) => {
         e.preventDefault()
 
         let inputValue = rest.value as string
-        setValue(formReplaceValue(value, inputValue, isDropdownValueSelected(value)))
+        setValue(formNewValue(dropdownValue, inputValue, isDropdownValueSelected(dropdownValue)))
     }
 
-    const formReplaceValue = (value: string, inputValue: string, isDropdownValueSelected: boolean) => {
-        let replaceValue: string
-
-        if (isDropdownValueSelected) {
-            replaceValue = inputValue.replace(new RegExp(`,?\\s*${value}`, 'i'), '')
-            if (replaceValue.split(/,\s*/).length === 2)
-                replaceValue = replaceValue.replace(/,\s*/, '')
-        } else {
-            if (!inputValue.length)
-                replaceValue = value
-            else
-                replaceValue = (rest.value as string) + ', ' + value
-        }
-
-        return replaceValue
+    const formNewValue = (dropdownValue: string, inputValue: string, isDropdownValueSelected: boolean) => {
+        if (isDropdownValueSelected)
+            return removeSubstringFromStringWithComas(inputValue, dropdownValue)
+        else
+            return inputValue.length ? inputValue + ', ' + dropdownValue : dropdownValue
     }
 
     const isDropdownValueSelected = (dropdownValue: string) => (rest.value as string).includes(dropdownValue)
