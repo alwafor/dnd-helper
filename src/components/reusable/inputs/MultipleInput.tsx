@@ -6,7 +6,7 @@ import {removeSubstringFromStringWithComas} from '../../../utils/stringUtils'
 import imgTriangle from '../../../assets/images/icons/triangle-icon-1.png'
 
 interface IProps extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
-    dropdownValues: string[]
+    dropdownValues: string[] | readonly string[]
     setValue: Function
 }
 
@@ -27,14 +27,15 @@ export const MultipleInput = React.forwardRef<HTMLInputElement, IProps>(({
     }, [])
 
     const handleInputClick = (e: React.MouseEvent<HTMLLabelElement>) => {
+        e.preventDefault()
         e.stopPropagation()
 
-        if (!isDropdownOpen)
-            setIsDropdownOpen(true)
+        setIsDropdownOpen(prev => !prev)
     }
 
     const handleDropdownItemClick = (e: React.MouseEvent<HTMLButtonElement>, dropdownValue: string) => {
         e.preventDefault()
+        e.stopPropagation()
 
         let inputValue = rest.value as string
         setValue(formNewValue(dropdownValue, inputValue, isDropdownValueSelected(dropdownValue)))
