@@ -1,0 +1,15 @@
+.savePage {
+  @apply grow;
+}
+
+.paragraph {
+  @apply indent-8;
+}
+
+.buttonsWrapper {
+  @apply mt-6 flex flex-wrap justify-around;
+}
+
+.saveStatus {
+  @apply my-6 text-center;
+}
