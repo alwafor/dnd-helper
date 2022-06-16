@@ -19,7 +19,7 @@ export const CreatureCard: React.FC<IProps> = ({creatureData, onClick}) => {
             <div className={styles.inlineStat}><span>КД</span> {creatureData.armor}</div>
             <div className={styles.desc}>{formHeadDescStr(creatureData)}</div>
             <div className={styles.stats}>
-                {getCreatureStats(creatureData).map(stat => <div className={styles.stat}>
+                {getCreatureStats(creatureData).map(stat => <div className={styles.stat} key={stat.name}>
                     <div className={styles.statName}>{stat.name}</div>
                     <div className={styles.statValue}>{stat.value}</div>
                 </div>)}
