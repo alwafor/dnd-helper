@@ -32,8 +32,12 @@ export const creaturesSlice = createSlice({
         removeCreature(state, action: PayloadAction<ICreatureData>) {
             state.creatures = state.creatures.filter(creature => creature.name !== action.payload.name)
             LocalStorage.removeCreature(action.payload.name)
+        },
+        loadCreatures(state, action: PayloadAction<ICreatureData[]>) {
+            state.creatures = action.payload
+            LocalStorage.loadCreatures(action.payload)
         }
     }
 })
 
-export const {addCreature, modifyCreature, removeCreature} = creaturesSlice.actions
+export const {addCreature, modifyCreature, removeCreature, loadCreatures} = creaturesSlice.actions
