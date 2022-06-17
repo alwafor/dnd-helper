@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/dnd-helper/static/css/main.b3799f9e.css",
-    "main.js": "/dnd-helper/static/js/main.49741935.js",
+    "main.css": "/dnd-helper/static/css/main.c450e750.css",
+    "main.js": "/dnd-helper/static/js/main.88afcb1b.js",
     "static/media/bookmanoldstyle_italic.ttf": "/dnd-helper/static/media/bookmanoldstyle_italic.4977fa8ff10aa3aef4da.ttf",
+    "static/media/bg-texture.png": "/dnd-helper/static/media/bg-texture.9efbaca70f36e40effd0.png",
     "static/media/Cuprum-Italic.ttf": "/dnd-helper/static/media/Cuprum-Italic.381cd7438e799b2befb4.ttf",
     "static/media/Cuprum.ttf": "/dnd-helper/static/media/Cuprum.690013a97e12bdb20ed3.ttf",
     "static/media/freestylescript_regular.ttf": "/dnd-helper/static/media/freestylescript_regular.66481f539db7e51d22d9.ttf",
@@ -10,12 +11,13 @@
     "static/media/creature-icon-1.svg": "/dnd-helper/static/media/creature-icon-1.8dfbd8a1e5a6f41051d359230b1b022c.svg",
     "static/media/wolf.png": "/dnd-helper/static/media/wolf.984ef00ea3547169a547.png",
     "static/media/creature-icon-2.svg": "/dnd-helper/static/media/creature-icon-2.d21bf339effbe129c5a8a1c7e3ebe6a0.svg",
+    "static/media/search-icon.svg": "/dnd-helper/static/media/search-icon.a9f707898e144ed582fad37d2f803e0b.svg",
     "index.html": "/dnd-helper/index.html",
-    "main.b3799f9e.css.map": "/dnd-helper/static/css/main.b3799f9e.css.map",
-    "main.49741935.js.map": "/dnd-helper/static/js/main.49741935.js.map"
+    "main.c450e750.css.map": "/dnd-helper/static/css/main.c450e750.css.map",
+    "main.88afcb1b.js.map": "/dnd-helper/static/js/main.88afcb1b.js.map"
   },
   "entrypoints": [
-    "static/css/main.b3799f9e.css",
-    "static/js/main.49741935.js"
+    "static/css/main.c450e750.css",
+    "static/js/main.88afcb1b.js"
   ]
 }
