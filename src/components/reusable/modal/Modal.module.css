@@ -1,0 +1,19 @@
+.overlay {
+  @apply flex justify-center items-center absolute left-0 top-0 right-0 bottom-0 z-40 bg-[rgba(0,0,0,0.3)];
+}
+
+.modal {
+  @apply relative absolute bg-white rounded-xl p-4;
+}
+
+.modalHeader {
+  @apply flex justify-end;
+}
+
+.modalCross {
+
+}
+
+.modalCross img {
+  @apply w-[18px] h-[18px];
+}
