@@ -1,15 +1,24 @@
 import React, {useState} from 'react'
 import styles from './SavePage.module.css'
 import imgSave from '../../assets/images/icons/diskette-icon.png'
+
+import {useAppDispatch, useAppSelector} from '../../hooks/redux'
+import {loadCreatures} from '../../redux/reducers/creaturesReducer'
+
 import {PageHead} from '../../components/layout/page-head/PageHead'
 import {Button} from '../../components/reusable/buttons/Button'
-import {useAppSelector} from '../../hooks/redux'
+import {Modal} from '../../components/reusable/modal/Modal'
+import {Textarea} from '../../components/reusable/textareas/Textarea'
 
 export const SavePage: React.FC = () => {
 
     const data = useAppSelector(state => state)
+    const dispatch = useAppDispatch()
 
     const [saveStatus, setSaveStatus] = useState('')
+    const [isLoadModalOpen, setIsLoadModalOpen] = useState(false)
+    const [textareaValue, setTextareaValue] = useState('')
+    const [loadMessage, setLoadMessage] = useState('')
 
     const handleSaveButtonClick = () => {
         navigator.clipboard.writeText(JSON.stringify(data))
@@ -20,8 +29,19 @@ export const SavePage: React.FC = () => {
             })
     }
 
+    const handleOpenLoadMenuButtonClick = () => {
+        setIsLoadModalOpen(true)
+    }
+
     const handleLoadButtonClick = () => {
-        setSaveStatus('load')
+        try {
+            const data = JSON.parse(textareaValue)
+            dispatch(loadCreatures(data.creatures.creatures))
+
+            setLoadMessage('Данные успешно разобраны и загружены!')
+        } catch (e) {
+            setLoadMessage('Произошла ошибка! Возможно, данные некорректны или повреждены.')
+        }
     }
 
     return <div className={styles.savePage}>
@@ -44,9 +64,19 @@ export const SavePage: React.FC = () => {
 
         <div className={styles.buttonsWrapper}>
             <Button className={styles.button} onClick={handleSaveButtonClick}>Сохранить</Button>
-            <Button className={styles.button} onClick={handleLoadButtonClick}>Загрузить</Button>
+            <Button className={styles.button} onClick={handleOpenLoadMenuButtonClick}>Загрузить</Button>
         </div>
 
+        <Modal isOpen={isLoadModalOpen} close={() => setIsLoadModalOpen(false)}>
+            <div className={styles.modal}>
+                Введите сохранённые данные в поле ниже
+                <Textarea value={textareaValue}
+                          onChange={e => setTextareaValue(e.target.value)}
+                          className={'max-h-[500px]'}
+                />
+                {loadMessage !== '' && <div>{loadMessage}</div>}
+                <Button onClick={handleLoadButtonClick}>Загрузить</Button>
+            </div>
+        </Modal>
     </div>
-
 }

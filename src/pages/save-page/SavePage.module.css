@@ -13,3 +13,11 @@
 .saveStatus {
   @apply my-6 text-center;
 }
+
+.modal {
+  @apply text-center;
+}
+
+.modalLoadError {
+  @apply text-red;
+}
